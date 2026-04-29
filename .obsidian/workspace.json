@@ -1,0 +1,231 @@
+{
+  "main": {
+    "id": "d0a041ebc77f1390",
+    "type": "split",
+    "children": [
+      {
+        "id": "385a3cd1c398c10c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "07c9ede1615cd917",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3573beee05a1d227",
+    "type": "split",
+    "children": [
+      {
+        "id": "a0261d9452d2e192",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0310ac4693eb7a87",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "5de442dac1d671fc",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "bf1e5f01e1a5eff9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9206e6f6b0ecb2ff",
+    "type": "split",
+    "children": [
+      {
+        "id": "268b1e7496b9ec74",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "869009ca27081608",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "wiki/index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "index 的反向链接列表"
+            }
+          },
+          {
+            "id": "a17a15b4ad4f24fa",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "wiki/index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "index 的出链列表"
+            }
+          },
+          {
+            "id": "53a2adb23c812406",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "393a37d7b848cbf4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "14aec532a1bdc317",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "wiki/index.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "index 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "07c9ede1615cd917",
+  "lastOpenFiles": [
+    "wiki/03_业务系统/MOM/接口&数据字典/枚举字典总览.md",
+    "wiki/03_业务系统/MOM/接口&数据字典/数据库表/平台模块数据模型/SYS_ORG_USER（行政组织与用户关系）.md",
+    "wiki/02_业务知识库/核心业务模块/返工返修需求拆解.md",
+    "wiki/index.md",
+    "raw/需求文档/03_优化需求/工作台卡片信息整理_V1.0.md",
+    "raw/需求文档/03_优化需求/DNW32000-产品标准化问题需求规格.md",
+    "raw/需求文档/03_优化需求/KMMOM产品标准化问题_用户故事清单_V1.0.md",
+    "raw/需求文档/03_优化需求",
+    "raw/需求文档/02_MOM-AI/Untitled",
+    "raw/需求文档/02_MOM-AI/ROLE-WB-REQ-01_角色工作台角色模板需求（参考）.md",
+    "raw/需求文档/02_MOM-AI/ROLE-WB-REQ-00_工作台通用模块清单.md",
+    "raw/需求文档/02_MOM-AI/DNW31530-APS智能体.md",
+    "raw/需求文档/02_MOM-AI/DNW31520-文档智能识别.md",
+    "raw/需求文档/02_MOM-AI/DNW31510-首页工作台指标AI分析.md",
+    "raw/需求文档/02_MOM-AI/DNW31500-智能问数.md",
+    "raw/需求文档/02_MOM-AI/AI-DA-01_智能问数需求文档.md",
+    "raw/需求文档/02_MOM-AI/AI-APS-05_原型交互规格说明.md",
+    "raw/需求文档/02_MOM-AI/2026.4.16用户大会MOM+AI主题场景.md",
+    "raw/需求文档/02_MOM-AI",
+    "raw/需求文档/01_标准功能/images/质量履历/KMMOM质量履历方案交流V4_page_044.png",
+    "raw/需求文档/01_标准功能/images/质量履历/KMMOM质量履历方案交流V4_page_043.png",
+    "raw/需求文档/01_标准功能/images/质量履历/KMMOM质量履历方案交流V4_page_042.png",
+    "raw/需求文档/01_标准功能/images/质量履历/KMMOM质量履历方案交流V4_page_041.png",
+    "raw/需求文档/01_标准功能/images/质量履历/KMMOM质量履历方案交流V4_page_040.png",
+    "raw/需求文档/01_标准功能/images/质量履历/KMMOM质量履历方案交流V4_page_039.png",
+    "raw/需求文档/01_标准功能/images/质量履历/KMMOM质量履历方案交流V4_page_038.png",
+    "raw/需求文档/01_标准功能/images/质量履历/KMMOM质量履历方案交流V4_page_037.png",
+    "raw/需求文档/01_标准功能/images/质量履历/KMMOM质量履历方案交流V4_page_036.png",
+    "raw/需求文档/01_标准功能/images/质量履历/KMMOM质量履历方案交流V4_page_035.png",
+    "raw/需求文档/01_标准功能/images/质量履历",
+    "raw/需求文档/01_标准功能/images/DNW31200-审批流管理/DNW31200-审批流管理_p54_r0_table.xlsx",
+    "raw/需求文档/01_标准功能/images/DNW31200-审批流管理/DNW31200-审批流管理_p49_r0_table.xlsx",
+    "raw/需求文档/01_标准功能/images/DNW31200-审批流管理/DNW31200-审批流管理_p46_r0_table.xlsx",
+    "raw/需求文档/01_标准功能/images/DNW31200-审批流管理/DNW31200-审批流管理_p43_r0_table.xlsx",
+    "raw/需求文档/01_标准功能/images/DNW31200-审批流管理/DNW31200-审批流管理_p40_r0_table.xlsx",
+    "raw/需求文档/01_标准功能/images/DNW31200-审批流管理/DNW31200-审批流管理_p37_r0_table.xlsx",
+    "raw/需求文档/01_标准功能/DNW31200-审批流管理.md",
+    "raw/需求文档/01_标准功能/DNW31000-看板&报表.md",
+    "raw/需求文档/01_标准功能/DNW30901-工装备料计划管理.md",
+    "raw/需求文档/01_标准功能/DNW30900-工装工具管理-功能设计（旧）.md",
+    "raw/需求文档/01_标准功能/DNW30900-工装工具管理-功能设计.md",
+    "raw/需求文档/01_标准功能/DNW30900-工装工具管理-业务分析.md",
+    "raw/需求文档/01_标准功能/DNW30800-设备管理.md",
+    "raw/需求文档/01_标准功能/DNW30710-物流管理（旧）.md",
+    "raw/需求文档/01_标准功能/DNW30710-物流管理.md",
+    "raw/需求文档/01_标准功能/DNW30702-物料三期管理.md"
+  ]
+}
