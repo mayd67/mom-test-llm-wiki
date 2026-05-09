@@ -1,0 +1,3 @@
+﻿interface:
+  display_name: "MOM模板种子生成器"
+  short_description: "按四类模板生成MOM主数据与生产订单"

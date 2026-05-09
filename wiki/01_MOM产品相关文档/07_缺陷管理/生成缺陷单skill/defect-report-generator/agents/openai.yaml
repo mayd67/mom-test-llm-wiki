@@ -1,0 +1,5 @@
+﻿interface:
+  display_name: "KMMOM Jira 缺陷 CSV"
+  short_description: "将零散问题材料整理为可直接导入的 KMMOM 缺陷 CSV，并默认直接生成标准命名文件。"
+  default_prompt: "使用 $defect-report-generator 将以下素材按内置缺陷录入约束转换为 KMMOM Jira 可导入 CSV，并按当前系统日期直接生成标准命名的导入文件。"
+
