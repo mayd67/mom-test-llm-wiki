@@ -24,3 +24,6 @@
 - 2026-05-09：新增 `01_MOM产品相关文档/07_缺陷管理/` 目录，纳入 `defect-report-generator` skill，并补充《缺陷管理总览》作为入口页。
 - 2026-05-09：更新 `wiki/index.md` 与 `README.md`，补充测试数据与缺陷管理两条知识入口，便于后续从知识库直接定位对应 skill。
 - 2026-05-09：基于当前 `wiki/`、`raw/`、`outputs/` 和 skill 实际结构，重写根目录 `README.md` 与 `SCHEMA.md`，将仓库说明与目录规则从旧的通用模型调整为当前 MOM LLM Wiki 实际模型。
+- 2026-05-09：在 `01_MOM产品相关文档/05_产品操作手册/` 下新增《产品操作手册能力总览》及 `user-manual-writer` skill，用于根据需求、设计、截图和现有 wiki 页面编写用户操作手册。
+- 2026-05-09：将根目录下的 `_tmp_build_wiki_from_process_specs.py`、`_tmp_extract_docx_to_txt.py`、`_tmp_read_docx.py` 及 `_tmp_docx_extracts/` 整理至 `scripts/_tmp/`，并补充目录说明，减少根目录临时文件堆积。
+- 2026-05-09：清理 `scripts/_tmp/` 中已无继续使用价值的 docx 调试脚本和提取文本中间产物，仅保留历史构建脚本与目录说明。
