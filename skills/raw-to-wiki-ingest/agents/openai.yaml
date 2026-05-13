@@ -1,0 +1,5 @@
+interface:
+  display_name: "Raw入库到Wiki"
+  short_description: "识别仓库结构后，把 raw 新文件安全镜像到 wiki，或路由到对应 builder。"
+  default_prompt: "请把新进入 raw 的文件按仓库规则整理进 wiki，先识别当前仓库是 legacy 结构还是 team-template 结构，再给出 plan 或直接 apply："
+

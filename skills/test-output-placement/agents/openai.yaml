@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "交付物目录规范"
+  short_description: "规范测试点、测试用例、测试数据、测试执行等产物在 outputs 中的目录落位、阶段子目录和命名方式。"
+  default_prompt: "请根据当前产物类型、评审状态和交付目标，判断它应该放在 outputs/ 的哪个目录，并给出建议文件名："

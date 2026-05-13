@@ -13,12 +13,13 @@
 
 ## Root Architecture
 
-当前仓库采用“四层结构 + 导航留痕”的组织方式：
+当前仓库采用“五层结构 + 导航留痕”的组织方式：
 
 - `raw/`：原始资料层，只保存来源，不直接承载知识结论
-- `wiki/`：结构化知识层，保存面向长期复用的知识页、总览页、专题页和 skill 入口
+- `wiki/`：结构化知识层，保存面向长期复用的知识页、总览页和专题页
 - `outputs/`：测试交付物层，保存评审、设计、执行和导入类产物
 - `scripts/`：辅助脚本层，保存镜像构建、资料整理、覆盖检查和历史同步脚本
+- `skills/`：仓库级能力层，保存可复用的 Codex skill、路由规则和 agent 元数据
 
 与知识库导航直接相关的文件：
 
@@ -26,6 +27,7 @@
 - `wiki/log.md`：知识库结构和内容维护日志
 - `README.md`：仓库级说明
 - `SCHEMA.md`：目录规则、页面规范和维护约定
+- `skills/README.md`：skill 目录总览、能力清单和默认产物落位说明
 
 ## Actual Directory Schema
 
@@ -59,11 +61,11 @@
 - `00_方法规范/`：放知识库规则、测试流程、评审清单、使用指南
 - `01_产品需求文档/`：放产品需求整理页，按标准功能、MOM-AI、优化需求细分
 - `02_数据模型/`：放数据模型总览、模块设计地图、原始设计导航和专题页
-- `03_测试点/`：放测试点模板、测试分析资料、测试点生成 skill
-- `04_测试用例/`：放测试用例样例、导入模板说明、测试用例生成 skill
+- `03_测试点/`：放测试点模板、测试分析资料和 skill 入口页
+- `04_测试用例/`：放测试用例样例、导入模板说明和 skill 入口页
 - `05_产品操作手册/`：放操作手册正文和按模块整理的文档树
-- `06_测试数据/`：放测试数据说明页、模板说明和测试数据生成 skill
-- `07_缺陷管理/`：放缺陷管理说明页、Jira 规则说明和缺陷单生成 skill
+- `06_测试数据/`：放测试数据说明页、模板说明和 skill 入口页
+- `07_缺陷管理/`：放缺陷管理说明页、Jira 规则说明和 skill 入口页
 
 `wiki/02_HX项目资料/` 当前用于承接项目级资料，主要放：
 
@@ -80,6 +82,7 @@
 - `outputs/03_测试用例/`
 - `outputs/04_测试执行/`
 - `outputs/05_用户操作手册/`
+- `outputs/06_测试数据/`
 - `outputs/99_归档/`
 
 规则：
@@ -90,12 +93,15 @@
 
 ## Skill Placement Rules
 
-当前知识库允许把可复用 skill 作为“知识能力包”保存在 `wiki/` 中，但必须放在语义匹配的目录下：
+当前仓库统一把可复用 skill 本体保存在根目录 `skills/` 中，`wiki/` 只保留能力入口页、使用说明和业务上下文：
 
-- 测试点 skill：放 `03_测试点/04_生成测试点skill/`
-- 测试用例 skill：放 `04_测试用例/04_生成测试用例skill/`
-- 测试数据 skill：放 `06_测试数据/04_生成测试数据skill/`
-- 缺陷单 skill：放 `07_缺陷管理/04_生成缺陷单skill/`
+- 测试点 skill：放 `skills/requirement-to-testpoints/`
+- 测试用例 skill：放 `skills/requirement-to-testcases/`
+- 用户手册编写 skill：放 `skills/user-manual-writer/`
+- 测试数据 skill：放 `skills/mom-business-data-generator/`
+- 缺陷单 skill：放 `skills/defect-report-generator/`
+- 交付物目录规范 skill：放 `skills/test-output-placement/`
+- raw 入库编排 skill：放 `skills/raw-to-wiki-ingest/`
 
 skill 目录可包含：
 
@@ -109,6 +115,7 @@ skill 目录可包含：
 
 不建议纳入 `wiki/` 的内容：
 
+- skill 本体目录
 - `output/`
 - `exports/`
 - `output_regen/`
@@ -212,6 +219,8 @@ updated: YYYY-MM-DD
 - 新增、修改、删除 `wiki/` 结构化页面后，应同步检查 `wiki/index.md` 和 `wiki/log.md`
 - 新增大类目录、调整主入口或修改主要工作流后，应同步更新 `README.md` 和 `SCHEMA.md`
 - 新增 skill 或调整 skill 目录时，应同步补充对应总览页和索引入口
+- 新进入 `raw/` 的资料如果要自动入库，优先通过 `python scripts/raw_to_wiki_ingest.py plan|apply|watch` 进入统一编排入口
+- 在当前 `legacy` 结构下，自动入库应只写安全镜像目录，不应覆盖人工整理页
 - `raw/` 中的原始资料非必要不改写；如需调整原文，应有明确理由
 - 运行脚本前，应先确认脚本输出结构与当前知识库真实结构一致
 - 涉及 `wiki/index.md` 自动重建的脚本，不应无检查直接覆盖当前手工维护导航
