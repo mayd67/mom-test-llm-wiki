@@ -1,0 +1,110 @@
+{
+  "namespace": "BC2",
+  "mapping": {
+    "admin_org": {
+      "ADM-BCA-HQ": "AD-BC2-01",
+      "ADM-BCA-TECH": "AD-BC2-02",
+      "ADM-BCA-PMC": "AD-BC2-03",
+      "ADM-BCA-QA": "AD-BC2-04",
+      "ADM-BCA-WM": "AD-BC2-05",
+      "ADM-BCA-EM": "AD-BC2-06",
+      "ADM-BCA-PLANT": "AD-BC2-07"
+    },
+    "biz_org": {
+      "BIZ-BCA-COMPANY": "BZ-BC2-01",
+      "BIZ-BCA-TECH": "BZ-BC2-02",
+      "BIZ-BCA-PMC": "BZ-BC2-03",
+      "BIZ-BCA-QA": "BZ-BC2-04",
+      "BIZ-BCA-WM": "BZ-BC2-05",
+      "BIZ-BCA-EM": "BZ-BC2-06",
+      "BIZ-BCA-PLANT": "BZ-BC2-07",
+      "BIZ-BCA-ASM-WS": "BZ-BC2-08",
+      "BIZ-BCA-KIT-SEC": "BZ-BC2-09",
+      "BIZ-BCA-WHEEL-SEC": "BZ-BC2-10",
+      "BIZ-BCA-MAIN-SEC": "BZ-BC2-11",
+      "BIZ-BCA-TUNE-SEC": "BZ-BC2-12",
+      "BIZ-BCA-PACK-SEC": "BZ-BC2-13",
+      "BIZ-BCA-KIT-A": "BZ-BC2-14",
+      "BIZ-BCA-WHEEL-A": "BZ-BC2-15",
+      "BIZ-BCA-MAIN-A": "BZ-BC2-16",
+      "BIZ-BCA-TUNE-A": "BZ-BC2-17",
+      "BIZ-BCA-PACK-A": "BZ-BC2-18"
+    },
+    "users": {
+      "100": "200",
+      "101": "201",
+      "102": "202",
+      "103": "203",
+      "104": "204",
+      "105": "205",
+      "106": "206",
+      "107": "207",
+      "108": "208",
+      "109": "209",
+      "110": "210"
+    },
+    "equipment": {
+      "Eq001": "EQ-BC2-01",
+      "Eq002": "EQ-BC2-02",
+      "Eq003": "EQ-BC2-03",
+      "Eq004": "EQ-BC2-04",
+      "Eq005": "EQ-BC2-05"
+    },
+    "tooling": {
+      "Tool-BCA-001": "TL-BC2-01",
+      "Tool-BCA-002": "TL-BC2-02",
+      "Tool-BCA-003": "TL-BC2-03"
+    },
+    "work_centers": {
+      "WC-BCA-KIT": "WC-BC2-01",
+      "WC-BCA-WHEEL": "WC-BC2-02",
+      "WC-BCA-MAIN": "WC-BC2-03",
+      "WC-BCA-TUNE": "WC-BC2-04",
+      "WC-BCA-PACK": "WC-BC2-05"
+    },
+    "warehouses": {
+      "Wh001": "WH-BC2-01",
+      "Wh002": "WH-BC2-02"
+    },
+    "locations": {
+      "Loc001": "LC-BC2-01",
+      "Loc002": "LC-BC2-02",
+      "Loc003": "LC-BC2-03"
+    },
+    "materials": {
+      "MAT-BCA-FRAME": "MAT-BC2-01",
+      "MAT-BCA-FORK": "MAT-BC2-02",
+      "MAT-BCA-WHEEL-F": "MAT-BC2-03",
+      "MAT-BCA-WHEEL-R": "MAT-BC2-04",
+      "MAT-BCA-HUB-F": "MAT-BC2-05",
+      "MAT-BCA-RIM-F": "MAT-BC2-06",
+      "MAT-BCA-SPOKE-F": "MAT-BC2-07",
+      "MAT-BCA-HUB-R": "MAT-BC2-08",
+      "MAT-BCA-RIM-R": "MAT-BC2-09",
+      "MAT-BCA-SPOKE-R": "MAT-BC2-10",
+      "MAT-BCA-TIRE": "MAT-BC2-11",
+      "MAT-BCA-DRIVE": "MAT-BC2-12",
+      "MAT-BCA-CRANK": "MAT-BC2-13",
+      "MAT-BCA-CHAIN": "MAT-BC2-14",
+      "MAT-BCA-FLYWHEEL": "MAT-BC2-15",
+      "MAT-BCA-BRAKE": "MAT-BC2-16",
+      "MAT-BCA-HANDLE": "MAT-BC2-17",
+      "MAT-BCA-SADDLE": "MAT-BC2-18",
+      "MAT-BCA-PEDAL": "MAT-BC2-19",
+      "MAT-BCA-ACC": "MAT-BC2-20",
+      "MAT-BCA-LUBE": "MAT-BC2-21",
+      "MAT-BCA-LABEL": "MAT-BC2-22",
+      "MAT-BCA-PKG": "MAT-BC2-23",
+      "MAT-BCA-BIKE-FIN": "MAT-BC2-24"
+    },
+    "mboms": {
+      "MBOM-BCA-ASM-A01": "MB-BC2-01"
+    },
+    "routes": {
+      "RT-BCA-ASM-A01": "RT-BC2-01"
+    },
+    "orders": {
+      "MO-BC2-001": "MO-BC2-01"
+    }
+  }
+}

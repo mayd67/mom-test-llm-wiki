@@ -1,4 +1,4 @@
-﻿---
+---
 name: requirement-to-testcases
 description: Generate structured test cases from requirement documents, wireframes, flowcharts, and existing functional test points. Use when Codex needs to turn requirement analysis material into executable test cases that directly follow the local `测试用例模版.xlsx` field layout. Also use when the user already has functional test points and wants them expanded into template-ready test cases with module path, preconditions, step rows, expected results, priority, and traceability notes.（用途说明：根据需求文档、原型图、流程图以及现有功能测试点生成结构化测试用例。当 Codex 需要将需求分析材料转换为可直接套用本地“测试用例模版.xlsx”的测试用例时使用。若用户已经有功能测试点，希望进一步展开为可执行、可导出、可追踪的模板化测试用例，也应使用。）
 ---

@@ -1,17 +1,13 @@
-﻿---
+---
 name: defect-report-generator
-description: 将用户提供的零散问题材料按内置缺陷录入规程和公司 Jira 模板整理为可直接导入的 KMMOM 缺陷 CSV，并自动补全与校验受控字段。
+description: Generate Jira-importable KMMOM defect CSV files from rough bug notes, chat snippets, screenshot summaries, log summaries, or incomplete defect drafts, using the built-in company Jira defect-entry rules and template to auto-fill and validate controlled fields. Use when Codex needs to turn scattered issue material into one or more Jira defects during defect preparation, split multiple independent issues into separate CSV rows, infer allowed enum values, or produce an import-ready CSV instead of a Markdown bug report.（用途说明：当用户提供零散问题记录、聊天片段、截图摘要、日志摘要或不完整缺陷草稿，并希望按公司 Jira 缺陷录入规则整理为可导入 CSV 时使用。）
 ---
 
-# KMMOM Jira 缺陷 CSV 生成（内置录入规则）
+# Defect Report Generator
 
-将用户随手写的问题描述、聊天片段、截图摘要、日志摘要或不完整缺陷草稿，按照内置缺陷录入规程约束和公司 Jira 模板，整理为可直接导入 Jira 的 KMMOM 缺陷 CSV。用于缺陷编制阶段的客观录入，自动生成问题类型、状态、概要、优先级、模块、严重程度、用户影响、描述、影响范围、责任字段、到期日、使用的版本、修复的版本和 Sprint，并确保字段值落在允许枚举内。
+将用户随手写的问题描述、聊天片段、截图摘要、日志摘要或不完整缺陷草稿，按照内置缺陷录入规程和公司 Jira 模板整理为可直接导入 Jira 的 KMMOM 缺陷 CSV，并自动生成问题类型、状态、概要、优先级、模块、严重程度、用户影响、描述、影响范围、责任字段、到期日、使用的版本、修复的版本和 Sprint，确保字段值落在允许枚举内。
 
 默认终点是 Jira 可导入的 CSV，不是 Markdown 缺陷单。
-
-## 何时使用
-
-当用户提供随手记录、聊天片段、截图摘要、日志摘要或不完整缺陷草稿，并要求按公司缺陷录入规则整理成 Jira 缺陷时使用。
 
 ## 先读哪些文件
 
@@ -119,13 +115,3 @@ python scripts/generate_jira_csv.py --input raw_notes.txt --owner zhangs --qa-ow
 3. CSV 模板：[assets/jira-import-template.csv](assets/jira-import-template.csv)
 4. 转换脚本：[scripts/generate_jira_csv.py](scripts/generate_jira_csv.py)
 5. 使用说明与 Jira 导入步骤：[references/usage-and-jira-import.md](references/usage-and-jira-import.md)
-
-
-
-
-
-
-
-
-
-

@@ -1,4 +1,4 @@
-﻿---
+---
 name: requirement-to-testpoints
 description: Convert requirement documents, wireframes, and flowcharts into structured test point lists for requirement analysis. Use when Codex needs to extract functional, exception, boundary, data, permission, and state-transition test points from requirement materials before test case writing. Also use when the user wants requirement-phase outputs such as test point lists, requirement gaps, review questions, or obvious cross-module impact hints.（用途说明：将需求文档、原型图和流程图转换为用于需求分析的结构化测试点清单。当 Codex 需要在编写测试用例之前，从需求材料中提取功能、异常、边界、数据、权限以及状态流转等测试点时，可以使用这个 skill。当用户希望得到需求阶段的产出物时，也可以使用这个 skill，例如测试点清单、需求缺口、评审问题，或明显的跨模块影响提示。）
 ---
