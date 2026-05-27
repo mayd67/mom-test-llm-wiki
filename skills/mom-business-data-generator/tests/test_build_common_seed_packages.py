@@ -1,4 +1,5 @@
-﻿import gc
+import json
+import gc
 import sys
 import tempfile
 import unittest
@@ -93,7 +94,47 @@ class BuildCommonSeedPackagesTests(unittest.TestCase):
             self.assertIn('种子概览.json', generated_files)
             gc.collect()
 
+    def test_build_packages_aligns_legacy_seed_fields_to_latest_templates(self):
+        template_dir = ROOT / 'templates'
+        with tempfile.TemporaryDirectory() as temp_dir:
+            results = batch_builder.build_packages(
+                scenario_keys=['bicycle_assembly_standard'],
+                template_dir=template_dir,
+                output_root=Path(temp_dir),
+            )
+
+            seed = json.loads(results[0]['asset_path'].read_text(encoding='utf-8-sig'))
+            workbooks = seed['workbooks']
+            system = workbooks[workbook_builder.WB_SYSTEM]
+            factory = workbooks[workbook_builder.WB_FACTORY]
+            product = workbooks[workbook_builder.WB_PRODUCT]
+
+            admin_row = system[workbook_builder.SH_ADMIN][0]
+            user_row = system[workbook_builder.SH_USER][0]
+            warehouse_row = factory[workbook_builder.SH_WAREHOUSE][0]
+            process_row = factory[workbook_builder.SH_PROCESS_LIB][0]
+            tooling_row = factory[workbook_builder.SH_TOOLING][0]
+            material_row = product[workbook_builder.SH_MATERIAL][0]
+            mbom_node_row = product[workbook_builder.SH_MBOM_NODE][0]
+
+            self.assertIn('*密级', admin_row)
+            self.assertIn('*名称', user_row)
+            self.assertIn('*用户安全等级', user_row)
+            self.assertNotIn('名称', user_row)
+            self.assertNotIn('用户安全等级', user_row)
+            self.assertIn('*作业模式', warehouse_row)
+            self.assertNotIn('作业模式', warehouse_row)
+            self.assertIn('工序专业类型', process_row)
+            self.assertNotIn('序专业类型', process_row)
+            self.assertNotIn('发布版本时间', tooling_row)
+            self.assertNotIn('发布人', tooling_row)
+            self.assertNotIn('发布版本时间', material_row)
+            self.assertNotIn('发布人', material_row)
+            self.assertIn('*MBom版本号', mbom_node_row)
+            self.assertIn('*MBom编码', mbom_node_row)
+            self.assertNotIn('*MBOM版本号', mbom_node_row)
+            self.assertNotIn('*MBOM编码', mbom_node_row)
+
 
 if __name__ == '__main__':
     unittest.main()
-

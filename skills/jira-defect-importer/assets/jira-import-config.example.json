@@ -1,0 +1,37 @@
+{
+  "api_base_url": "http://jira-host:8080",
+  "project_key": "KMMOM3",
+  "project_code": "KMMOM",
+  "board_id": "149",
+  "km_rde_db_sql_path": "D:/07_Git/km-rde/backend/km-rde/scripts/db.sql",
+  "username": "",
+  "password": "",
+  "username_env": "JIRA_USERNAME",
+  "password_env": "JIRA_PASSWORD",
+  "user_identity_key": "name",
+  "default_issue_type": "缺陷",
+  "default_create_status": "缺陷编制中",
+  "append_impact_analysis_to_description": true,
+  "strict_custom_fields": false,
+  "field_map": {
+    "责任人": "customfield_10257",
+    "测试责任人": "customfield_11002",
+    "缺陷产生者": "customfield_11238",
+    "缺陷严重程度": "customfield_10605",
+    "缺陷来源": "customfield_10604",
+    "缺陷引入阶段": "customfield_11806",
+    "模块": "",
+    "对用户的影响程度": "",
+    "Sprint": "",
+    "影响范围分析": ""
+  },
+  "defaults": {
+    "缺陷来源": "测试",
+    "缺陷引入阶段": "测试阶段"
+  },
+  "transition_name_map": {
+    "缺陷分派中": "分派"
+  },
+  "transition_id_map": {},
+  "extra_fields": {}
+}

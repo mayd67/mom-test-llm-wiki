@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+import shutil
 import subprocess
 import sys
 import time
@@ -27,16 +29,21 @@ PROFILE_UNKNOWN = "unknown"
 TEXT_EXTENSIONS = {".md", ".txt", ".yaml", ".yml", ".html", ".htm"}
 ATTACHMENT_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".bmp", ".mp4"}
 SKIP_NAMES = {".gitkeep", ".gitignore"}
+LINK_RE = re.compile(r"(!?\[[^\]]*\]\()([^)]+)(\))")
 
 LEGACY_MIRROR_ROOTS = {
     "需求文档": WIKI_DIR / "01_MOM产品相关文档" / "01_产品需求文档" / "99_原始资料镜像",
     "产品资料": WIKI_DIR / "01_MOM产品相关文档" / "02_数据模型" / "10_自动入库镜像",
     "接口资料": WIKI_DIR / "01_MOM产品相关文档" / "02_数据模型" / "10_自动入库镜像" / "接口资料",
-    "项目文档": WIKI_DIR / "02_HX项目资料" / "99_原始资料镜像",
     "测试资料": WIKI_DIR / "01_MOM产品相关文档" / "04_测试用例" / "99_原始资料镜像",
     "测试流程规范": WIKI_DIR / "01_MOM产品相关文档" / "00_方法规范" / "99_原始资料镜像" / "测试流程规范",
     "截图附件": WIKI_DIR / "01_MOM产品相关文档" / "00_方法规范" / "99_原始资料镜像" / "截图附件",
 }
+LEGACY_PROJECT_DOC_ROOTS = {
+    "BJHX项目资料": WIKI_DIR / "02_HX项目资料" / "99_原始资料镜像",
+    "QD项目资料": WIKI_DIR / "03_QD项目资料" / "99_原始资料",
+}
+DEFAULT_LEGACY_PROJECT_DOC_ROOT = WIKI_DIR / "02_HX项目资料" / "99_原始资料镜像"
 
 TEAM_TEMPLATE_BUILDERS = [
     ("需求文档", ROOT / "scripts" / "build_requirements_wiki.py"),
@@ -143,14 +150,20 @@ def iter_selected_files(inputs: list[str] | None) -> list[Path]:
 
 
 def should_skip(path: Path) -> bool:
-    return path.name in SKIP_NAMES or path.name.startswith(".")
+    return path.name in SKIP_NAMES or path.name.startswith(".") or path.name.startswith("~$")
 
 
 def top_group(path: Path) -> str:
     return path.relative_to(RAW_DIR).parts[0]
 
 
-def legacy_mirror_root(group: str) -> Path:
+def legacy_mirror_root(path: Path) -> Path:
+    group = top_group(path)
+    if group == "项目文档":
+        rel_parts = path.relative_to(RAW_DIR / group).parts
+        project_folder = rel_parts[0] if rel_parts else ""
+        return LEGACY_PROJECT_DOC_ROOTS.get(project_folder, DEFAULT_LEGACY_PROJECT_DOC_ROOT)
+
     root = LEGACY_MIRROR_ROOTS.get(group)
     if root is None:
         raise SystemExit(f"Unsupported raw group in legacy profile: {group}")
@@ -160,20 +173,31 @@ def legacy_mirror_root(group: str) -> Path:
 def legacy_mirror_path(path: Path) -> Path:
     group = top_group(path)
     rel = path.relative_to(RAW_DIR / group)
-    target_root = legacy_mirror_root(group)
+    target_root = legacy_mirror_root(path)
     return target_root.joinpath(*rel.parts).with_suffix(".md")
 
 
 def legacy_attachment_index_path(path: Path) -> Path:
     group = top_group(path)
     rel_dir = path.parent.relative_to(RAW_DIR / group)
-    target_root = legacy_mirror_root(group)
+    target_root = legacy_mirror_root(path)
     return target_root.joinpath(*rel_dir.parts) / "附件索引.md"
 
 
 def route_for_legacy(path: Path) -> Route:
     group = top_group(path)
     rel = relative_posix(path)
+    if group == "项目文档":
+        rel_parts = path.relative_to(RAW_DIR / group).parts
+        if rel_parts and rel_parts[0] == "QD项目资料":
+            return Route(
+                raw_path=rel,
+                group=group,
+                action="copy_raw_file",
+                handler="legacy_copy_raw_file",
+                target_path=relative_posix(legacy_mirror_root(path).joinpath(*rel_parts)),
+                note="QD project docs are copied from raw into wiki as original files.",
+            )
     extension = path.suffix.lower()
     if extension in ATTACHMENT_EXTENSIONS:
         return Route(
@@ -329,6 +353,26 @@ def relative_markdown_link(from_path: Path, to_path: Path) -> str:
     return rel.as_posix()
 
 
+def rewrite_markdown_links(text: str, raw_file: Path, target: Path) -> str:
+    def replace(match: re.Match[str]) -> str:
+        prefix, link_target, suffix = match.groups()
+        if link_target.startswith(("http://", "https://", "mailto:", "#")):
+            return match.group(0)
+
+        wrapped = link_target.startswith("<") and link_target.endswith(">")
+        clean_target = link_target[1:-1] if wrapped else link_target
+        resolved = (raw_file.parent / clean_target).resolve()
+        if not resolved.exists():
+            return match.group(0)
+
+        rewritten = relative_markdown_link(target, resolved)
+        if wrapped:
+            rewritten = f"<{rewritten}>"
+        return f"{prefix}{rewritten}{suffix}"
+
+    return LINK_RE.sub(replace, text)
+
+
 def render_frontmatter(title: str, summary: str, sources: list[str], tags: list[str]) -> list[str]:
     lines = ["---", f"title: {title}", "type: manual", "status: active", "tags:"]
     lines.extend(yaml_list(tags))
@@ -414,6 +458,8 @@ def extract_body(path: Path) -> tuple[str, str]:
 
 def render_legacy_mirror(path: Path, target: Path) -> str:
     body, body_kind = extract_body(path)
+    if body_kind == "markdown":
+        body = rewrite_markdown_links(body, path, target)
     raw_rel = relative_posix(path)
     title = title_for_raw_file(path)
     summary = f"自动镜像 {raw_rel}，作为当前 legacy wiki 结构下的安全入库入口。"
@@ -486,12 +532,23 @@ def write_auto_page(path: Path, content: str) -> str:
     return "written"
 
 
+def copy_raw_file(source: Path, target: Path) -> str:
+    target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source, target)
+    return "copied"
+
+
 def apply_legacy(routes: list[Route]) -> dict[str, int]:
     result = Counter()
     attachment_targets: dict[Path, list[Path]] = defaultdict(list)
 
     for route in routes:
         raw_path = ROOT / route.raw_path
+        if route.action == "copy_raw_file" and route.target_path:
+            target = ROOT / route.target_path
+            status = copy_raw_file(raw_path, target)
+            result[status] += 1
+            continue
         if route.action == "index_attachments" and route.target_path:
             attachment_targets[ROOT / route.target_path].append(raw_path)
             continue

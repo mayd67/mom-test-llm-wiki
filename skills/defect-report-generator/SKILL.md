@@ -53,7 +53,7 @@ description: Generate Jira-importable KMMOM defect CSV files from rough bug note
    - `P1-重要不紧急(100)` -> `缺陷提出日 + 1D`
    - `P2-紧急不重要(100)` -> `缺陷提出日 + 3D`
    - `P3-不重要不紧急(80)` -> `缺陷提出日 + 5D`
-7. `Sprint` 输出 Jira 实际值，不输出显示名；默认 `276`。
+7. `Sprint` 输出 Jira 实际值，不输出显示名；优先读取项目 Sprint 目录并按当前日期自动推荐，无法读取时才回退到静态默认值 `276`。
 8. `使用的版本` 默认规则：
    - `2026-04-15` 之前 -> `KMMOM Cloud V3.4`
    - `2026-04-15`（含）之后 -> `KMMOM Cloud V3.5`
@@ -67,6 +67,7 @@ description: Generate Jira-importable KMMOM defect CSV files from rough bug note
 2. 提取显式字段；显式值优先于推断值。
 3. 按内置规则推断 `优先级`、`模块`、`缺陷严重程度`、`对用户的影响程度`。
 4. 对缺失值使用允许的默认值；`责任人`、`测试责任人`、`缺陷产生者` 能从中文姓名转换时直接转换，无法生成时允许留空。
+   - 若用户把责任信息直接写在问题标题或正文括号里，例如 `（缺陷产生者和开发责任人是薛启宽、测试责任人是马雨逗）`，也应自动抽取为责任字段，并避免把这段元信息混入概要和问题描述。
 5. 用户提供了足够素材且未明确禁止写文件时，默认直接整理 `raw_notes` 并生成 Jira CSV；若识别为多条缺陷，则写入同一个 CSV 文件的多行，不要拆成多个 CSV，也不要为了确认“是否需要再整理成 Jira CSV”而追问。
 6. 回复中同时给出精简缺陷内容和实际生成文件路径；若写文件失败，再退回内联 CSV 文本。
 
@@ -86,6 +87,8 @@ python scripts/generate_jira_csv.py --input raw_notes.txt
 python scripts/generate_jira_csv.py --text "问题描述..."
 ```
 
+当输入文本包含中文批量缺陷内容时，优先使用 `--input raw_notes.txt` 读取 UTF-8 文件，避免在 Windows shell 中因为控制台编码导致正文乱码。
+
 补填责任字段时可这样调用：
 
 ```bash
@@ -93,6 +96,19 @@ python scripts/generate_jira_csv.py --input raw_notes.txt --owner zhangs --qa-ow
 ```
 
 以上四个参数仅在原始素材未提供对应字段时生效。
+
+若希望根据项目实际 Sprint 自动给出合适值，优先先读取项目 Sprint 目录：
+
+```bash
+python ../jira-defect-importer/scripts/import_jira_defects.py sprints --config ../jira-defect-importer/assets/jira-import-config.local.json --report sprint_catalog.json
+python scripts/generate_jira_csv.py --input raw_notes.txt --sprint-catalog sprint_catalog.json
+```
+
+也可一步到位直接让脚本读取 Jira：
+
+```bash
+python scripts/generate_jira_csv.py --input raw_notes.txt --jira-config ../jira-defect-importer/assets/jira-import-config.local.json
+```
 
 如确需传入 `--output`，只能传目录，或传入已符合当日格式 `jira_import_(MM-DD-NNN).csv` 的完整文件名；不得再使用业务含义型自定义文件名。若未收到用户明确指定的业务日期，不得传入固定历史 `--today`。
 

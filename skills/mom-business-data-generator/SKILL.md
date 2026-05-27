@@ -26,10 +26,12 @@ description: Generate MOM business seed packages and import-ready Excel workbook
 - 命中内置场景时，优先直接执行 `python scripts/build_common_seed_packages.py --scenario <scenario_name>`。
 - 用户提供了自定义种子时，优先执行 `python scripts/generate_seed_workbooks.py --seed <seed.json>`。
 - 只想先检查种子合法性时，执行 `python scripts/generate_seed_workbooks.py --seed <seed.json> --validate-only`。
+- 对旧版字段口径的 `seed.json`，优先继续复用；共享生成器会按当前 `templates/` 下的最新导入模板自动做字段对齐。
 - 只有在用户明确要求扩容数据量、升级大样本或补充批量对象时，才继续使用 `seed_volume_enhancer.py`、`scene_seed_upgrades.py` 等增强脚本。
 
 3. 输出结果。
 - 默认从 `templates/` 读取四本 Excel 模板：`系统配置_模板.xlsx`、`工厂资源_模板.xlsx`、`产品与工艺_模板.xlsx`、`生产订单_模板.xlsx`。
+- 当前仓库内的 `系统配置`、`工厂资源`、`产品与工艺` 模板已按最新导入口径维护；新增的资质等级、资质关系、文件关系等 Sheet 默认允许留空。
 - 默认输出到工作区根目录 `outputs/06_测试数据/`。
 - 默认按“一个业务场景一个子目录”的方式组织输出。
 - 输出目录、摘要文件和业务标签优先使用中文；摘要文件优先命名为 `种子概览.json`。
@@ -40,6 +42,7 @@ description: Generate MOM business seed packages and import-ready Excel workbook
 - 未明确要求时，默认不生成 `厂内转工`、`厂际转工`。
 - 只有当用户明确要求“一级工艺 + 项目部/生产部协同层”时，才生成项目协同扩展层。
 - 引用字段统一填写真实存在的对象编码；涉及版本号时一并填写版本号。
+- `资质等级`、`资质等级与用户`、`工序库与资质等级`、`工艺路线与资质等级关系`、`物料与文件关系` 默认保持空表；只有用户明确提供合法编码和映射关系时才补数据。
 
 5. 回复结果。
 - 说明采用的蓝图、关键假设、是否使用内置标准场景。

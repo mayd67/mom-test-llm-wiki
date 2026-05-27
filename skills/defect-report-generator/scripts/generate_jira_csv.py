@@ -5,12 +5,13 @@ from __future__ import annotations
 
 import argparse
 import csv
+import importlib.util
 import re
 import sys
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 try:
     from pypinyin import lazy_pinyin
@@ -97,7 +98,7 @@ MODULE_OPTIONS = [
     "08-mom-approve",
 ]
 MODULE_KEYWORDS: Dict[str, List[str]] = {
-    "01-mom-platform": ["系统管理", "主数据", "platform", "用户管理", "角色", "权限", "字典"],
+    "01-mom-platform": ["系统管理", "主数据", "platform", "用户管理", "角色", "权限", "字典", "三员管理", "工作台配置", "布局配置"],
     "02-mom-mes": ["计划管理", "制造执行", "mes", "工单", "报工", "生产", "工序", "工位", "派工"],
     "03-mom-aps": ["aps", "apsp", "排程", "排产", "甘特", "计划排程"],
     "04-mom-wms": ["wms", "仓储", "物流", "入库", "出库", "移库", "盘点", "库位"],
@@ -145,6 +146,8 @@ FIELD_ALIASES: Dict[str, str] = {
     "影响范围": "impact",
     "影响": "impact",
     "责任人": "owner",
+    "开发责任人": "owner",
+    "开发负责人": "owner",
     "assignee": "owner",
     "测试责任人": "qa_owner",
     "测试负责人": "qa_owner",
@@ -233,6 +236,27 @@ COMPOUND_SURNAMES = {
     "??", "??", "??", "??", "??",
 }
 
+INLINE_OWNER_PATTERNS = [
+    (
+        re.compile(r"(?:缺陷产生者和开发责任人|开发责任人和缺陷产生者)\s*(?:是|为|[:：])\s*([^，,；;、（）()]+)"),
+        ("creator", "owner"),
+    ),
+    (
+        re.compile(r"(?:测试责任人|测试负责人)\s*(?:是|为|[:：])\s*([^，,；;、（）()]+)"),
+        ("qa_owner",),
+    ),
+    (
+        re.compile(r"(?:开发责任人|开发负责人|(?<!测试)(?<!开发)责任人)\s*(?:是|为|[:：])\s*([^，,；;、（）()]+)"),
+        ("owner",),
+    ),
+    (
+        re.compile(r"(?:缺陷产生者|报告人)\s*(?:是|为|[:：])\s*([^，,；;、（）()]+)"),
+        ("creator",),
+    ),
+]
+
+_SPRINT_HELPER_MODULE = None
+
 
 @dataclass
 class ParsedIssue:
@@ -248,6 +272,32 @@ class ParsedIssue:
             "pending": [],
         }
     )
+
+
+def set_field_if_missing(issue: ParsedIssue, field: str, value: str) -> None:
+    cleaned = re.sub(r"^[\s:：]+|[\s，,；;、。]+$", "", (value or "").strip())
+    if cleaned and not issue.fields.get(field):
+        issue.fields[field] = cleaned
+
+
+def consume_inline_owner_notes(issue: ParsedIssue, text: str) -> str:
+    cleaned = (text or "").strip()
+    if not cleaned:
+        return ""
+
+    for pattern, targets in INLINE_OWNER_PATTERNS:
+        def _replace(match: re.Match[str]) -> str:
+            value = match.group(1).strip()
+            for target in targets:
+                set_field_if_missing(issue, target, value)
+            return ""
+
+        cleaned = pattern.sub(_replace, cleaned)
+
+    cleaned = re.sub(r"[（(]\s*[，,；;、]*\s*[）)]", "", cleaned)
+    cleaned = re.sub(r"\s+[，,；;、]\s*$", "", cleaned)
+    cleaned = re.sub(r"\s{2,}", " ", cleaned)
+    return cleaned.strip(" ，,；;、")
 
 
 def normalize_key(raw: str) -> str:
@@ -309,7 +359,7 @@ def parse_issue(block: str) -> ParsedIssue:
 
         heading_match = ISSUE_HEADER_WITH_TITLE.match(line)
         if heading_match:
-            heading_summary = heading_match.group(1).strip()
+            heading_summary = consume_inline_owner_notes(issue, heading_match.group(1).strip())
             if heading_summary and not issue.fields.get("summary"):
                 issue.fields["summary"] = heading_summary
             continue
@@ -320,7 +370,7 @@ def parse_issue(block: str) -> ParsedIssue:
         field_match = FIELD_LINE.match(line)
         if field_match:
             key = normalize_key(field_match.group(1))
-            value = field_match.group(2).strip()
+            value = consume_inline_owner_notes(issue, field_match.group(2).strip())
             mapped = FIELD_ALIASES.get(key)
             if mapped:
                 current_target = mapped if mapped in SECTION_KEYS else current_target
@@ -339,6 +389,10 @@ def parse_issue(block: str) -> ParsedIssue:
                     elif value and mapped in issue.fields:
                         issue.fields[mapped] = f"{issue.fields[mapped]} {value}".strip()
                 continue
+
+        line = consume_inline_owner_notes(issue, line)
+        if not line:
+            continue
 
         target = current_target if current_target in SECTION_KEYS else "problem"
         issue.sections[target].append(line)
@@ -552,6 +606,78 @@ def parse_date_text(value: str) -> date | None:
     return None
 
 
+def load_sprint_helper_module():
+    global _SPRINT_HELPER_MODULE
+    if _SPRINT_HELPER_MODULE is not None:
+        return _SPRINT_HELPER_MODULE
+
+    helper_path = (
+        Path(__file__).resolve().parents[1].parent
+        / "jira-defect-importer"
+        / "scripts"
+        / "jira_project_sprints.py"
+    )
+    if not helper_path.exists():
+        raise FileNotFoundError(f"Sprint helper script not found: {helper_path}")
+
+    spec = importlib.util.spec_from_file_location("_jira_project_sprints_helper", helper_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Unable to load sprint helper module from {helper_path}")
+
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    _SPRINT_HELPER_MODULE = module
+    return module
+
+
+def load_sprint_catalog(path: Path) -> Dict[str, Any]:
+    helper = load_sprint_helper_module()
+    return helper.load_sprint_catalog(path)
+
+
+def build_live_sprint_catalog(config_path: Path, today: date) -> Dict[str, Any]:
+    helper = load_sprint_helper_module()
+    cfg = helper.load_sprint_connection_config(config_path)
+    return helper.build_sprint_catalog(cfg, today)
+
+
+def find_catalog_sprint_by_raw(raw: str, sprint_catalog: Dict[str, Any] | None) -> Tuple[str, str]:
+    if not raw or not sprint_catalog:
+        return "", ""
+
+    sprints = sprint_catalog.get("sprints", [])
+    if not isinstance(sprints, list):
+        return "", ""
+
+    normalized = raw.strip()
+    for item in sprints:
+        sprint_id = str(item.get("id", "")).strip()
+        sprint_name = str(item.get("name", "")).strip()
+        if normalized == sprint_id or normalized == sprint_name:
+            return sprint_id, sprint_name
+
+    for item in sprints:
+        sprint_id = str(item.get("id", "")).strip()
+        sprint_name = str(item.get("name", "")).strip()
+        if normalized and normalized in sprint_name:
+            return sprint_id, sprint_name
+
+    return "", ""
+
+
+def get_catalog_suggestion(sprint_catalog: Dict[str, Any] | None) -> Tuple[str, str, str]:
+    if not sprint_catalog:
+        return "", "", ""
+    suggested = sprint_catalog.get("suggested_sprint", {})
+    if not isinstance(suggested, dict):
+        return "", "", ""
+    sprint_id = str(suggested.get("id", "")).strip()
+    sprint_name = str(suggested.get("name", "")).strip()
+    reason = str(sprint_catalog.get("suggestion_reason", "")).strip()
+    return sprint_id, sprint_name, reason
+
+
 def resolve_due_date(issue: ParsedIssue, today: date, priority: str) -> str:
     explicit = parse_date_text(issue.fields.get("due_date", ""))
     if explicit:
@@ -578,10 +704,17 @@ def resolve_fix_version(issue: ParsedIssue, today: date, default_fix_version: st
     return "KMMOM Cloud V3.4", ""
 
 
-def resolve_sprint(issue: ParsedIssue) -> Tuple[str, str]:
+def resolve_sprint(issue: ParsedIssue, sprint_catalog: Dict[str, Any] | None = None) -> Tuple[str, str]:
     raw = issue.fields.get("sprint", "").strip()
     if not raw:
+        suggested_id, suggested_name, suggested_reason = get_catalog_suggestion(sprint_catalog)
+        if suggested_id:
+            return suggested_id, f"未提供 Sprint，已根据项目 Sprint 与当前日期自动选择 {suggested_name}({suggested_id})。{suggested_reason}"
         return DEFAULT_SPRINT_ID, ""
+
+    catalog_id, _catalog_name = find_catalog_sprint_by_raw(raw, sprint_catalog)
+    if catalog_id:
+        return catalog_id, ""
     if raw in SPRINT_ID_TO_DISPLAY:
         return raw, ""
     if raw in SPRINT_DISPLAY_TO_ID:
@@ -589,6 +722,9 @@ def resolve_sprint(issue: ParsedIssue) -> Tuple[str, str]:
     for display, sprint_id in SPRINT_DISPLAY_TO_ID.items():
         if raw in display:
             return sprint_id, ""
+    suggested_id, suggested_name, suggested_reason = get_catalog_suggestion(sprint_catalog)
+    if suggested_id:
+        return suggested_id, f"Sprint {raw} 未在项目 Sprint 列表中找到，已根据当前日期自动选择 {suggested_name}({suggested_id})。{suggested_reason}"
     return DEFAULT_SPRINT_ID, f"Sprint {raw} 不在允许列表中，已按默认值 276 输出，请确认。"
 
 
@@ -638,6 +774,7 @@ def to_csv_row(
     issue: ParsedIssue,
     columns: List[str],
     today: date,
+    sprint_catalog: Dict[str, Any] | None = None,
     default_owner: str = "",
     default_qa_owner: str = "",
     default_creator: str = "",
@@ -665,7 +802,7 @@ def to_csv_row(
     if priority_note:
         pending_notes.append(priority_note)
 
-    sprint_id, sprint_note = resolve_sprint(issue)
+    sprint_id, sprint_note = resolve_sprint(issue, sprint_catalog)
     if sprint_note:
         pending_notes.append(sprint_note)
 
@@ -784,6 +921,8 @@ def parse_args() -> argparse.Namespace:
         help="CSV template path for header order",
     )
     parser.add_argument("--today", type=str, default="", help="Override current system date with YYYY-MM-DD for backfill or explicit business date scenarios")
+    parser.add_argument("--sprint-catalog", dest="sprint_catalog", type=str, default="", help="Path to sprint catalog JSON generated by jira-defect-importer sprints.")
+    parser.add_argument("--jira-config", dest="jira_config", type=str, default="", help="Path to jira importer config; when provided the script reads live project sprints and auto-suggests Sprint by date.")
     parser.add_argument("--owner", type=str, default="", help="Fallback Jira account for 责任人 when raw notes omit it")
     parser.add_argument("--qa-owner", dest="qa_owner", type=str, default="", help="Fallback Jira account for 测试责任人 when raw notes omit it")
     parser.add_argument("--creator", type=str, default="", help="Fallback Jira account for 缺陷产生者 when raw notes omit it")
@@ -808,12 +947,22 @@ def main() -> int:
     if today is None:
         print("--today must use YYYY-MM-DD.", file=sys.stderr)
         return 1
+    sprint_catalog: Dict[str, Any] | None = None
+    try:
+        if args.sprint_catalog:
+            sprint_catalog = load_sprint_catalog(Path(args.sprint_catalog))
+        elif args.jira_config:
+            sprint_catalog = build_live_sprint_catalog(Path(args.jira_config), today)
+    except Exception as exc:
+        print(f"Sprint catalog error: {exc}", file=sys.stderr)
+        return 1
     columns = load_columns(Path(args.template))
     rows = [
         to_csv_row(
             parse_issue(block),
             columns,
             today,
+            sprint_catalog=sprint_catalog,
             default_owner=args.owner,
             default_qa_owner=args.qa_owner,
             default_creator=args.creator,

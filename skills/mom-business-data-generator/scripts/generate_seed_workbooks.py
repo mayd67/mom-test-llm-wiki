@@ -68,8 +68,8 @@ COL_SUPPLIER = "*\u4f9b\u5e94\u5546"
 COL_WAREHOUSE_CODE = "*\u5e93\u623f\u7f16\u7801"
 COL_MATERIAL_CODE = "*\u7269\u6599\u7f16\u7801"
 COL_MATERIAL_VERSION = "*\u7269\u6599\u7248\u672c\u53f7"
-COL_MBOM_CODE = "*MBOM\u7f16\u7801"
-COL_MBOM_VERSION = "*MBOM\u7248\u672c\u53f7"
+COL_MBOM_CODE = "*MBom\u7f16\u7801"
+COL_MBOM_VERSION = "*MBom\u7248\u672c\u53f7"
 COL_NODE_LEVEL = "*\u5c42\u7ea7"
 COL_NODE_SEQ = "*\u5e8f\u53f7"
 COL_PARENT_MATERIAL_CODE = "\u7236\u7269\u6599\u7f16\u7801"
@@ -171,6 +171,35 @@ REFERENCE_RULES = [
     ((WB_ORDER, SH_PICK, (COL_REPL_MATERIAL_VERSION, COL_REPL_MATERIAL_CODE)), (WB_PRODUCT, SH_MATERIAL, (COL_VERSION, COL_CODE)), False),
 ]
 
+DEFAULT_INTEGRATION_SYSTEM = "MOM-SEED"
+DEFAULT_SECURITY_VALUE = "\u516c\u5f00"
+HEADER_ALIASES = {
+    (WB_SYSTEM, SH_USER): {
+        "*\u540d\u79f0": ("*\u540d\u79f0", "\u540d\u79f0"),
+        "\u540d\u79f0": ("\u540d\u79f0", "*\u540d\u79f0"),
+        "*\u7528\u6237\u5b89\u5168\u7b49\u7ea7": ("*\u7528\u6237\u5b89\u5168\u7b49\u7ea7", "\u7528\u6237\u5b89\u5168\u7b49\u7ea7"),
+        "\u7528\u6237\u5b89\u5168\u7b49\u7ea7": ("\u7528\u6237\u5b89\u5168\u7b49\u7ea7", "*\u7528\u6237\u5b89\u5168\u7b49\u7ea7"),
+    },
+    (WB_FACTORY, SH_WAREHOUSE): {
+        "*\u4f5c\u4e1a\u6a21\u5f0f": ("*\u4f5c\u4e1a\u6a21\u5f0f", "\u4f5c\u4e1a\u6a21\u5f0f"),
+        "\u4f5c\u4e1a\u6a21\u5f0f": ("\u4f5c\u4e1a\u6a21\u5f0f", "*\u4f5c\u4e1a\u6a21\u5f0f"),
+    },
+    (WB_FACTORY, SH_PROCESS_LIB): {
+        "\u5de5\u5e8f\u4e13\u4e1a\u7c7b\u578b": ("\u5de5\u5e8f\u4e13\u4e1a\u7c7b\u578b", "\u5e8f\u4e13\u4e1a\u7c7b\u578b"),
+        "\u5e8f\u4e13\u4e1a\u7c7b\u578b": ("\u5e8f\u4e13\u4e1a\u7c7b\u578b", "\u5de5\u5e8f\u4e13\u4e1a\u7c7b\u578b"),
+    },
+    (WB_PRODUCT, SH_MBOM_NODE): {
+        "*MBom\u7248\u672c\u53f7": ("*MBom\u7248\u672c\u53f7", "*MBOM\u7248\u672c\u53f7"),
+        "*MBOM\u7248\u672c\u53f7": ("*MBOM\u7248\u672c\u53f7", "*MBom\u7248\u672c\u53f7"),
+        "*MBom\u7f16\u7801": ("*MBom\u7f16\u7801", "*MBOM\u7f16\u7801"),
+        "*MBOM\u7f16\u7801": ("*MBOM\u7f16\u7801", "*MBom\u7f16\u7801"),
+    },
+}
+GENERIC_HEADER_ALIASES = {
+    "\u96c6\u6210\u521b\u5efa\u65f6\u95f4": ("\u96c6\u6210\u521b\u5efa\u65f6\u95f4", "*\u96c6\u6210\u521b\u5efa\u65f6\u95f4"),
+    "*\u96c6\u6210\u521b\u5efa\u65f6\u95f4": ("*\u96c6\u6210\u521b\u5efa\u65f6\u95f4", "\u96c6\u6210\u521b\u5efa\u65f6\u95f4"),
+}
+
 
 def normalize(value):
     if value is None:
@@ -178,6 +207,68 @@ def normalize(value):
     if isinstance(value, str):
         return value.strip()
     return str(value).strip()
+
+
+def _primary_identifier(row):
+    for field in (
+        COL_CODE,
+        COL_USER_ID,
+        COL_DEVICE_CODE,
+        COL_WC_CODE,
+        COL_WAREHOUSE_CODE,
+        COL_MATERIAL_CODE,
+        COL_ORDER_CODE,
+        COL_MBOM_CODE,
+        "*MBOM\u7f16\u7801",
+        COL_ROUTE_CODE,
+    ):
+        value = normalize(row.get(field, ""))
+        if value:
+            return value
+    return ""
+
+
+def _candidate_fields(workbook_name, sheet_name, header):
+    sheet_aliases = HEADER_ALIASES.get((workbook_name, sheet_name), {})
+    if header in sheet_aliases:
+        return sheet_aliases[header]
+    if header in GENERIC_HEADER_ALIASES:
+        return GENERIC_HEADER_ALIASES[header]
+    return (header,)
+
+
+def _default_field_value(seed, row, header):
+    if header == "*\u5bc6\u7ea7":
+        return normalize(seed.get("metadata", {}).get("default_security")) or DEFAULT_SECURITY_VALUE
+    if header == "\u96c6\u6210\u7cfb\u7edf":
+        return normalize(row.get(header, "")) or DEFAULT_INTEGRATION_SYSTEM
+    if header == "\u96c6\u6210\u6570\u636e\u4e3b\u952e":
+        return normalize(row.get(header, "")) or _primary_identifier(row)
+    return ""
+
+
+def align_seed_to_template(seed, template_headers):
+    workbooks = seed.get("workbooks", {})
+    for (workbook_name, sheet_name), headers in template_headers.items():
+        workbook = workbooks.get(workbook_name)
+        if workbook is None or sheet_name not in workbook:
+            continue
+        aligned_rows = []
+        for row in workbook.get(sheet_name, []):
+            aligned = {}
+            for header in headers:
+                value = ""
+                for source_field in _candidate_fields(workbook_name, sheet_name, header):
+                    if source_field in row and normalize(row.get(source_field, "")):
+                        value = row[source_field]
+                        break
+                if not normalize(value):
+                    value = _default_field_value(seed, row, header)
+                if header.startswith("*") or normalize(value):
+                    aligned[header] = value
+            aligned_rows.append(aligned)
+        workbook[sheet_name] = aligned_rows
+    return seed
 
 
 def is_complete_template_dir(candidate: Path) -> bool:
@@ -725,6 +816,7 @@ def main():
         return 1
     seed = json.loads(seed_path.read_text(encoding='utf-8-sig'))
     headers = load_template_headers(template_dir)
+    align_seed_to_template(seed, headers)
     template_validations = load_template_list_validations(template_dir)
     structure_errors, warnings = validate_structure(seed, headers)
     errors = structure_errors + validate_list_values(seed, template_validations) + validate_unique(seed) + validate_references(seed) + validate_storage_org_rules(seed) + validate_route_refs(seed) + validate_order_refs(seed)

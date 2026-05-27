@@ -58,6 +58,8 @@ def should_include_raw_file(path: Path) -> bool:
         return False
     if path.name.lower() in IGNORED_FILE_NAMES:
         return False
+    if path.name.startswith("~$"):
+        return False
     if path.suffix.lower() in IGNORED_SUFFIXES:
         return False
     return True

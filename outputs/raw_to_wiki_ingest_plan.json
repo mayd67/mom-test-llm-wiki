@@ -1,0 +1,801 @@
+{
+  "generated_at": "2026-05-26T17:18:24",
+  "requested_profile": "legacy",
+  "detected_profile": "legacy",
+  "raw_file_count": 98,
+  "route_count": 98,
+  "summary": {
+    "index_attachments": 97,
+    "mirror_file": 1
+  },
+  "handlers": {
+    "legacy_attachment_index": 97,
+    "legacy_mirror_file": 1
+  },
+  "routes": [
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-001.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-002.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-003.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-004.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-005.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-006.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-007.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-008.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-009.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-010.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-011.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-012.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-013.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-014.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-015.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-016.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-017.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-018.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-019.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-020.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-021.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-022.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-023.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-024.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-025.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-026.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-027.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-028.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-029.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-030.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-031.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-032.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-033.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-034.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-035.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-036.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-037.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-038.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-039.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-040.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-041.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-042.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-043.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-044.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-045.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-046.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-047.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-048.jpeg",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-049.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-050.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-051.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-052.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-053.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-054.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-055.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-056.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-057.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-058.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-059.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-060.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-061.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-062.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-063.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-064.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-065.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-066.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-067.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-068.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-069.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-070.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-071.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-072.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-073.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-074.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-075.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-076.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-077.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-078.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-079.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-080.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-081.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-082.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-083.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-084.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-085.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-086.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-087.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-088.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-089.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-090.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-091.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-092.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-093.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-094.png",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-095.jpeg",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-096.jpeg",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/image-097.jpeg",
+      "group": "项目文档",
+      "action": "index_attachments",
+      "handler": "legacy_attachment_index",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.assets/附件索引.md",
+      "note": "Binary attachments stay in raw and are exposed through a wiki index page."
+    },
+    {
+      "raw_path": "raw/项目文档/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.md",
+      "group": "项目文档",
+      "action": "mirror_file",
+      "handler": "legacy_mirror_file",
+      "target_path": "wiki/03_QD项目资料/99_原始资料镜像/QD项目资料/天府轻动MOM项目详细设计方案V3/天府轻动MOM项目详细设计方案V3.md",
+      "note": "Safe legacy mode writes only to dedicated auto-ingest mirror folders."
+    }
+  ]
+}

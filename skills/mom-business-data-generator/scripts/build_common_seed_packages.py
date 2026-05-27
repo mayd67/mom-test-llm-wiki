@@ -10,6 +10,7 @@ from pathlib import Path
 
 from generate_seed_workbooks import (
     TEMPLATE_FILES,
+    align_seed_to_template,
     build_summary,
     default_output_root_for_template_dir,
     fill_workbook,
@@ -137,6 +138,7 @@ def _build_seed(spec: ScenarioSpec) -> tuple[object, dict]:
 
 def _validate_seed(seed: dict, template_dir: Path) -> tuple[list[str], list[str]]:
     headers = load_template_headers(template_dir)
+    align_seed_to_template(seed, headers)
     template_validations = load_template_list_validations(template_dir)
     structure_errors, warnings = validate_structure(seed, headers)
     errors = structure_errors

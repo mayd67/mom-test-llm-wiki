@@ -36,6 +36,8 @@ def should_include(path: Path) -> bool:
         return False
     if path.name.lower() in IGNORED_FILE_NAMES:
         return False
+    if path.name.startswith("~$"):
+        return False
     return True
 
 

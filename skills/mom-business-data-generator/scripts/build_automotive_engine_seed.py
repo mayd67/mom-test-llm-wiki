@@ -4,7 +4,7 @@ import json
 import sys
 from pathlib import Path
 
-from scene_seed_upgrades import apply_scene_upgrade
+from scene_seed_upgrades import apply_scene_upgrade, normalize_storage_factory_org
 from tooling_strategy_profiles import apply_profile
 from production_order_seed import apply_production_orders
 
@@ -831,6 +831,7 @@ def build_variant(namespace: str, volume_profile: str | None = None) -> dict:
     build_routes()
     apply_profile(seed, 'automotive_engine')
     apply_scene_upgrade(seed, 'automotive_engine', namespace, volume_profile=volume_profile)
+    normalize_storage_factory_org(seed)
     apply_production_orders(seed, 'automotive_engine', namespace)
     return seed
 

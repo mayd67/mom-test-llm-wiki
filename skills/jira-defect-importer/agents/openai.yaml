@@ -1,0 +1,4 @@
+interface:
+  display_name: "KMMOM Jira 缺陷导入"
+  short_description: "将规范化的 KMMOM 缺陷 CSV 或原始缺陷素材整理后直接创建到 Jira，并返回创建结果。"
+  default_prompt: "使用 $jira-defect-importer 将以下 KMMOM 缺陷素材或 CSV 导入 Jira；若输入仍是零散记录，先按内置规则整理成标准 CSV，再执行 dry-run 和导入。"

@@ -85,6 +85,14 @@
 - 出现 `---`、`===`、`***` 分隔线时，按多条缺陷处理。
 - 没有明确分隔标记时，默认按单条缺陷处理。
 
+也支持在标题或正文后直接附责任信息，例如：
+
+```text
+问题1：三员管理界面点击刷新按钮，系统弹出操作失败提示（缺陷产生者和开发责任人是薛启宽、测试责任人是马雨逗）
+```
+
+脚本会自动抽取责任字段，并把这段元信息从概要/问题描述中剔除。
+
 ### 4. 责任字段补充规则
 
 如果已知以下字段，建议一并提供：
@@ -100,6 +108,8 @@
   - `薛启宽 -> xueqk`
   - `马雨逗 -> mayd`
 
+如果是批量中文缺陷原文，建议先保存为 UTF-8 文本，再用 `--input raw_notes.txt` 生成 CSV，避免 Windows 控制台直传时出现乱码。
+
 ### 5. skill 输出结果
 
 skill 默认直接生成 Jira 导入 CSV，不需要额外确认是否落文件。
@@ -107,6 +117,27 @@ skill 默认直接生成 Jira 导入 CSV，不需要额外确认是否落文件�
 默认输出目录：
 
 - `outputs/04_测试执行/03_缺陷导出/`
+
+### 6. Sprint 自动推荐
+
+如果素材没有明确给出 `Sprint`，建议优先读取项目真实 Sprint 列表，再按当前日期自动推荐：
+
+```bash
+python skills/jira-defect-importer/scripts/import_jira_defects.py sprints --config skills/jira-defect-importer/assets/jira-import-config.local.json --report sprint_catalog.json
+python skills/defect-report-generator/scripts/generate_jira_csv.py --input raw_notes.txt --sprint-catalog sprint_catalog.json
+```
+
+也可直接一步读取 Jira：
+
+```bash
+python skills/defect-report-generator/scripts/generate_jira_csv.py --input raw_notes.txt --jira-config skills/jira-defect-importer/assets/jira-import-config.local.json
+```
+
+推荐规则：
+
+1. 当前日期落在某个 Sprint 周期内时，优先选该 Sprint。
+2. 当前日期早于所有 Sprint 时，选最近即将开始的 Sprint。
+3. 当前日期晚于所有 Sprint 时，选最近结束的 Sprint。
 
 默认文件名格式：
 
