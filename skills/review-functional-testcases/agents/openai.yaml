@@ -1,0 +1,4 @@
+interface:
+  display_name: "测试用例评审"
+  short_description: "对照需求文档、RPD、原型和流程评审功能测试用例。"
+  default_prompt: "Use $review-functional-testcases to review these functional test cases against the requirement document, RPD, prototype, flow, and existing test points, then output findings and revision suggestions first."
