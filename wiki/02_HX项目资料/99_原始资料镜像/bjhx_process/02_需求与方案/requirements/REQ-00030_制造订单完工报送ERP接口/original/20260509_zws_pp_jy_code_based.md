@@ -1,0 +1,29 @@
+---
+title: 原始资料-项目文档-20260509_zws_pp_jy_code_based
+type: manual
+status: active
+tags:
+  - testing
+  - raw
+  - mirror
+  - auto-ingest
+summary: 自动镜像 wiki/02_HX项目资料/99_原始资料/bjhx_process/02_需求与方案/requirements/REQ-00030_制造订单完工报送ERP接口/original/20260509_zws_pp_jy_code_based.wsdl，作为当前 legacy wiki 结构下的安全入库入口。
+source:
+  - wiki/02_HX项目资料/99_原始资料/bjhx_process/02_需求与方案/requirements/REQ-00030_制造订单完工报送ERP接口/original/20260509_zws_pp_jy_code_based.wsdl
+updated: 2026-05-27
+---
+
+<!-- raw-to-wiki-ingest:auto -->
+
+# 原始资料-项目文档-20260509_zws_pp_jy_code_based
+
+## 来源说明
+
+- 原始路径：`wiki/02_HX项目资料/99_原始资料/bjhx_process/02_需求与方案/requirements/REQ-00030_制造订单完工报送ERP接口/original/20260509_zws_pp_jy_code_based.wsdl`
+- 目标路径：`wiki/02_HX项目资料/99_原始资料镜像/bjhx_process/02_需求与方案/requirements/REQ-00030_制造订单完工报送ERP接口/original/20260509_zws_pp_jy_code_based.md`
+- 提取方式：`unsupported`
+- 说明：本页由统一入库脚本自动生成，不覆盖人工整理页。
+
+## 原始内容镜像
+
+当前文件类型暂不支持正文提取，已保留来源路径供后续人工整理。

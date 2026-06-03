@@ -1,0 +1,155 @@
+{
+  "mode": "import",
+  "project_key": "KMMOM3",
+  "success_count": 3,
+  "failure_count": 0,
+  "results": [
+    {
+      "row_index": 1,
+      "summary": "【用户管理-组织变动】 组织查询后未自动定位到结果",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【用户管理-组织变动】 组织查询后未自动定位到结果",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：在用户管理页面执行组织变动操作时，组织变动弹窗右侧组织树输入查询条件并点击查询后，界面未自动定位到命中的组织结果。\n操作步骤：\n1. 进入基础数据-用户管理页面。\n2. 选择一条用户记录，打开组织变动窗口。\n3. 在右侧组织树查询框中输入组织名称关键字，例如“车轮工段”。\n4. 点击查询按钮，观察组织树定位结果。\n实际结果：查询后组织树未自动定位到命中的组织节点，用户仍需手动在树中查找目标组织。\n期望结果：输入查询条件并点击查询后，组织树应自动定位并高亮展示命中的组织节点，便于用户直接选择。",
+          "priority": {
+            "name": "P2-紧急不重要(100)"
+          },
+          "duedate": "2026-05-30",
+          "customfield_10257": {
+            "name": "liujw"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "liujw"
+          },
+          "customfield_10605": {
+            "value": "六级"
+          },
+          "components": [
+            {
+              "name": "01-mom-platform"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响管理员在用户组织变动场景下的组织选择效率，增加人工查找成本，降低组织调整操作效率。"
+        }
+      },
+      "status": "created",
+      "issue_key": "KMMOM3-4418",
+      "issue_id": "157721",
+      "transition_applied": "",
+      "error": ""
+    },
+    {
+      "row_index": 2,
+      "summary": "【待办任务】 批量通过按钮不生效",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【待办任务】 批量通过按钮不生效",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：在待办任务界面中，用户拥有“待办任务批量通过权限”时，页面仍无法正常使用批量通过能力，批量通过按钮不生效。\n操作步骤：\n1. 使用已配置“待办任务批量通过权限”的账号进入消息中心-待办任务页面。\n2. 打开某个审批流对应的待办任务列表。\n3. 勾选一条或多条待办任务记录。\n4. 观察并尝试点击页面中的批量通过按钮。\n实际结果：批量通过按钮未正常生效，无法完成批量通过操作。\n期望结果：拥有对应权限并选择待办任务记录后，页面应正常提供并执行批量通过操作。",
+          "priority": {
+            "name": "P1-重要不紧急(100)"
+          },
+          "duedate": "2026-05-28",
+          "customfield_10257": {
+            "name": "liujw"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "liujw"
+          },
+          "customfield_10605": {
+            "value": "四级"
+          },
+          "components": [
+            {
+              "name": "08-mom-approve"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响审批人员批量处理待办任务，降低审批处理效率，增加重复操作成本。"
+        }
+      },
+      "status": "created",
+      "issue_key": "KMMOM3-4419",
+      "issue_id": "157722",
+      "transition_applied": "",
+      "error": ""
+    },
+    {
+      "row_index": 3,
+      "summary": "【待办任务】 页面受权限过滤导致数据展示不完整",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【待办任务】 页面受权限过滤导致数据展示不完整",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：在待办任务界面中，页面数据会受到权限过滤影响，导致部分本应展示的待办任务未显示。\n操作步骤：\n1. 进入消息中心-待办任务页面。\n2. 选择某个流程分类并输入查询条件，例如所属工厂“Biz010 | 燃油系统装配工厂”。\n3. 点击查询，观察待办任务列表返回结果。\n4. 对照业务预期检查页面是否存在因权限过滤导致的待办任务缺失。\n实际结果：待办任务页面返回结果受权限过滤影响，部分待办任务未按业务预期展示。\n期望结果：待办任务页面不应受该权限过滤限制，应完整展示当前用户应处理或应查看的待办任务数据。",
+          "priority": {
+            "name": "P1-重要不紧急(100)"
+          },
+          "duedate": "2026-05-28",
+          "customfield_10257": {
+            "name": "mengx"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "mengx"
+          },
+          "customfield_10605": {
+            "value": "四级"
+          },
+          "components": [
+            {
+              "name": "08-mom-approve"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响审批待办任务的完整性展示，可能导致用户遗漏待处理任务，影响审批流程推进和业务处理及时性。"
+        }
+      },
+      "status": "created",
+      "issue_key": "KMMOM3-4420",
+      "issue_id": "157723",
+      "transition_applied": "",
+      "error": ""
+    }
+  ]
+}

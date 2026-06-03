@@ -1,0 +1,29 @@
+---
+title: 原始资料-项目文档-KMMOM-BJHX_CODE_RULE_20260512181020.data
+type: manual
+status: active
+tags:
+  - testing
+  - raw
+  - mirror
+  - auto-ingest
+summary: 自动镜像 wiki/02_HX项目资料/99_原始资料/bjhx_process/02_需求与方案/datamodels/project-extension/source-json/KMMOM-BJHX_CODE_RULE_20260512181020.data.json，作为当前 legacy wiki 结构下的安全入库入口。
+source:
+  - wiki/02_HX项目资料/99_原始资料/bjhx_process/02_需求与方案/datamodels/project-extension/source-json/KMMOM-BJHX_CODE_RULE_20260512181020.data.json
+updated: 2026-05-27
+---
+
+<!-- raw-to-wiki-ingest:auto -->
+
+# 原始资料-项目文档-KMMOM-BJHX_CODE_RULE_20260512181020.data
+
+## 来源说明
+
+- 原始路径：`wiki/02_HX项目资料/99_原始资料/bjhx_process/02_需求与方案/datamodels/project-extension/source-json/KMMOM-BJHX_CODE_RULE_20260512181020.data.json`
+- 目标路径：`wiki/02_HX项目资料/99_原始资料镜像/bjhx_process/02_需求与方案/datamodels/project-extension/source-json/KMMOM-BJHX_CODE_RULE_20260512181020.data.md`
+- 提取方式：`unsupported`
+- 说明：本页由统一入库脚本自动生成，不覆盖人工整理页。
+
+## 原始内容镜像
+
+当前文件类型暂不支持正文提取，已保留来源路径供后续人工整理。

@@ -50,8 +50,10 @@ python scripts/organize_output_by_material_name.py --clean
 
 ## 4. 默认规则
 
-- 模板默认使用 `templates/`
-- `templates/` 中的 `系统配置`、`工厂资源`、`产品与工艺` 默认跟随最新导入模板口径维护
+- 用户提供了最新导入模板时，必须优先使用用户提供的模板目录
+- 不要直接覆盖 `templates/`；优先把最新模板复制到当前业务目录下的独立模板目录，并重命名为标准文件名
+- 除非已明确确认 `templates/` 就是最新模板，否则所有生成和校验命令都显式传 `--template-dir <最新模板目录>`
+- `templates/` 只作为兜底基线模板，不作为“最新模板”的默认结论
 - 输出默认写到工作区根目录 `outputs/06_测试数据/`
 - 输出目录优先中文
 - 摘要文件优先 `种子概览.json`
@@ -59,6 +61,7 @@ python scripts/organize_output_by_material_name.py --clean
 - 未明确要求时，不生成 `厂内转工` / `厂际转工`
 - 编码优先短编码
 - 旧版字段口径的 seed JSON 会在生成时自动对齐到当前模板字段
+- 导出的 Excel 必须按本次任务确认的最新模板输出
 
 ## 5. 跨 Agent 使用
 

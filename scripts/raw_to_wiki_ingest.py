@@ -29,6 +29,9 @@ PROFILE_UNKNOWN = "unknown"
 TEXT_EXTENSIONS = {".md", ".txt", ".yaml", ".yml", ".html", ".htm"}
 ATTACHMENT_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".bmp", ".mp4"}
 SKIP_NAMES = {".gitkeep", ".gitignore"}
+SKIP_PARTS = {".git", ".hg", ".svn", ".trae", "__pycache__"}
+LEGACY_WIKI_RAW_DIR = "99_原始资料"
+LEGACY_WIKI_MIRROR_DIR = "99_原始资料镜像"
 LINK_RE = re.compile(r"(!?\[[^\]]*\]\()([^)]+)(\))")
 
 LEGACY_MIRROR_ROOTS = {
@@ -44,6 +47,7 @@ LEGACY_PROJECT_DOC_ROOTS = {
     "QD项目资料": WIKI_DIR / "03_QD项目资料" / "99_原始资料",
 }
 DEFAULT_LEGACY_PROJECT_DOC_ROOT = WIKI_DIR / "02_HX项目资料" / "99_原始资料镜像"
+SUPPORTED_RAW_GROUPS = set(LEGACY_MIRROR_ROOTS) | {"项目文档"}
 
 TEAM_TEMPLATE_BUILDERS = [
     ("需求文档", ROOT / "scripts" / "build_requirements_wiki.py"),
@@ -66,6 +70,13 @@ class Route:
     handler: str
     target_path: str | None = None
     note: str | None = None
+
+
+@dataclass(frozen=True)
+class SourceContext:
+    kind: str
+    root: Path
+    group: str
 
 
 def now_iso() -> str:
@@ -120,17 +131,52 @@ def resolve_profile(requested: str) -> str:
     return detected
 
 
-def normalize_raw_input(value: str) -> Path:
+def legacy_wiki_source_root(path: Path) -> Path | None:
+    try:
+        rel = path.relative_to(WIKI_DIR.resolve())
+    except ValueError:
+        return None
+    if len(rel.parts) < 2 or rel.parts[1] != LEGACY_WIKI_RAW_DIR:
+        return None
+    return (WIKI_DIR / rel.parts[0] / LEGACY_WIKI_RAW_DIR).resolve()
+
+
+def source_context(path: Path) -> SourceContext | None:
+    resolved = path.resolve()
+    try:
+        rel = resolved.relative_to(RAW_DIR.resolve())
+    except ValueError:
+        legacy_root = legacy_wiki_source_root(resolved)
+        if legacy_root is None:
+            return None
+        return SourceContext(kind="legacy-wiki", root=legacy_root, group="项目文档")
+
+    if not rel.parts:
+        return None
+    group = rel.parts[0]
+    if group not in SUPPORTED_RAW_GROUPS:
+        return None
+    return SourceContext(kind="raw", root=RAW_DIR.resolve(), group=group)
+
+
+def normalize_input_path(value: str) -> Path:
     path = Path(value)
     if not path.is_absolute():
         path = (ROOT / path).resolve()
     else:
         path = path.resolve()
-    try:
-        path.relative_to(RAW_DIR.resolve())
-    except ValueError as exc:
-        raise SystemExit(f"Input path must stay under raw/: {value}") from exc
+    if source_context(path) is None:
+        raise SystemExit(f"Input path must stay under raw/ or wiki/*/{LEGACY_WIKI_RAW_DIR}/: {value}")
     return path
+
+
+def group_relative_path(path: Path) -> Path:
+    context = source_context(path)
+    if context is None:
+        raise SystemExit(f"Unsupported source path: {relative_posix(path)}")
+    if context.kind == "legacy-wiki":
+        return path.relative_to(context.root)
+    return path.relative_to(RAW_DIR / context.group)
 
 
 def iter_selected_files(inputs: list[str] | None) -> list[Path]:
@@ -138,7 +184,7 @@ def iter_selected_files(inputs: list[str] | None) -> list[Path]:
         return sorted(path for path in RAW_DIR.rglob("*") if path.is_file())
     result: list[Path] = []
     for value in inputs:
-        path = normalize_raw_input(value)
+        path = normalize_input_path(value)
         if path.is_file():
             result.append(path)
             continue
@@ -150,17 +196,30 @@ def iter_selected_files(inputs: list[str] | None) -> list[Path]:
 
 
 def should_skip(path: Path) -> bool:
-    return path.name in SKIP_NAMES or path.name.startswith(".") or path.name.startswith("~$")
+    if path.name in SKIP_NAMES or path.name.startswith(".") or path.name.startswith("~$"):
+        return True
+    if any(part in SKIP_PARTS for part in path.parts):
+        return True
+    return source_context(path) is None
 
 
 def top_group(path: Path) -> str:
-    return path.relative_to(RAW_DIR).parts[0]
+    context = source_context(path)
+    if context is None:
+        raise SystemExit(f"Unsupported source path: {relative_posix(path)}")
+    return context.group
 
 
 def legacy_mirror_root(path: Path) -> Path:
-    group = top_group(path)
+    context = source_context(path)
+    if context is None:
+        raise SystemExit(f"Unsupported source path: {relative_posix(path)}")
+    if context.kind == "legacy-wiki":
+        return context.root.parent / LEGACY_WIKI_MIRROR_DIR
+
+    group = context.group
     if group == "项目文档":
-        rel_parts = path.relative_to(RAW_DIR / group).parts
+        rel_parts = group_relative_path(path).parts
         project_folder = rel_parts[0] if rel_parts else ""
         return LEGACY_PROJECT_DOC_ROOTS.get(project_folder, DEFAULT_LEGACY_PROJECT_DOC_ROOT)
 
@@ -171,24 +230,25 @@ def legacy_mirror_root(path: Path) -> Path:
 
 
 def legacy_mirror_path(path: Path) -> Path:
-    group = top_group(path)
-    rel = path.relative_to(RAW_DIR / group)
+    rel = group_relative_path(path)
     target_root = legacy_mirror_root(path)
     return target_root.joinpath(*rel.parts).with_suffix(".md")
 
 
 def legacy_attachment_index_path(path: Path) -> Path:
-    group = top_group(path)
-    rel_dir = path.parent.relative_to(RAW_DIR / group)
+    rel_dir = group_relative_path(path).parent
     target_root = legacy_mirror_root(path)
     return target_root.joinpath(*rel_dir.parts) / "附件索引.md"
 
 
 def route_for_legacy(path: Path) -> Route:
+    context = source_context(path)
+    if context is None:
+        raise SystemExit(f"Unsupported source path: {relative_posix(path)}")
     group = top_group(path)
     rel = relative_posix(path)
-    if group == "项目文档":
-        rel_parts = path.relative_to(RAW_DIR / group).parts
+    if context.kind == "raw" and group == "项目文档":
+        rel_parts = group_relative_path(path).parts
         if rel_parts and rel_parts[0] == "QD项目资料":
             return Route(
                 raw_path=rel,
@@ -488,7 +548,7 @@ def render_legacy_mirror(path: Path, target: Path) -> str:
 
 
 def render_attachment_index(raw_dir: Path, target: Path) -> str:
-    group = raw_dir.relative_to(RAW_DIR).parts[0]
+    group = top_group(raw_dir)
     raw_rel_dir = relative_posix(raw_dir)
     title = f"附件索引-{group}-{raw_dir.name}"
     tags = ["testing", "raw", "attachment", "auto-ingest"]
@@ -504,7 +564,7 @@ def render_attachment_index(raw_dir: Path, target: Path) -> str:
             "",
             f"- 原始目录：`{raw_rel_dir}`",
             f"- 目标路径：`{relative_posix(target)}`",
-            "- 说明：附件原件继续保留在 raw，仅在 wiki 中建立索引入口。",
+            "- 说明：附件原件继续保留在来源目录，仅在 wiki 中建立索引入口。",
             "",
             "## 附件列表",
             "",

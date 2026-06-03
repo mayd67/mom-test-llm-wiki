@@ -227,6 +227,7 @@ updated: YYYY-MM-DD
 - 新增大类目录、调整主入口或修改主要工作流后，应同步更新 `README.md` 和 `SCHEMA.md`
 - 新增 skill 或调整 skill 目录时，应同步补充对应总览页和索引入口
 - 新进入 `raw/` 的资料如果要自动入库，优先通过 `python scripts/raw_to_wiki_ingest.py plan|apply|watch` 进入统一编排入口
+- `legacy` 项目目录下手工补进 `wiki/*/99_原始资料/` 的资料，也应通过 `raw_to_wiki_ingest.py` 显式传路径入库，只写同级安全镜像目录
 - 在当前 `legacy` 结构下，自动入库应只写安全镜像目录，不应覆盖人工整理页
 - `raw/` 中的原始资料非必要不改写；如需调整原文，应有明确理由
 - 运行脚本前，应先确认脚本输出结构与当前知识库真实结构一致

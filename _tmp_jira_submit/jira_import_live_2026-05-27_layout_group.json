@@ -1,0 +1,106 @@
+{
+  "mode": "import",
+  "project_key": "KMMOM3",
+  "success_count": 2,
+  "failure_count": 0,
+  "results": [
+    {
+      "row_index": 1,
+      "summary": "【页面布局管理-服务端布局】 分组中输入自定义别名后显示异常",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【页面布局管理-服务端布局】 分组中输入自定义别名后显示异常",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：在系统管理的页面布局管理中，打开服务端布局的网格默认布局设计后，对分组内字段输入自定义别名时，输入框显示内容与实际输入内容不一致，存在字符丢失或重复的现象。\n操作步骤：\n1. 进入系统管理的页面布局管理页面，打开网格默认布局设计弹窗。\n2. 在列配置中找到一个已加入分组的字段。\n3. 在该字段的“自定义别名”输入框中输入 hege，观察显示结果。\n4. 在同类场景下再次输入 baofei，观察显示结果。\n实际结果：输入 hege 时界面实际显示为 heg；输入 baofei 时界面实际显示为 bbaof，输入内容与界面显示内容不一致。\n期望结果：自定义别名输入框应准确显示并保存用户输入的完整内容，不应出现字符丢失、重复或错位。",
+          "priority": {
+            "name": "P1-重要不紧急(100)"
+          },
+          "duedate": "2026-05-28",
+          "customfield_10257": {
+            "name": "luzh"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "luzh"
+          },
+          "customfield_10605": {
+            "value": "四级"
+          },
+          "components": [
+            {
+              "name": "01-mom-platform"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 281,
+          "customfield_11104": "影响系统管理员或实施人员在服务端布局中维护字段别名，导致布局配置结果与预期不一致，影响页面展示配置的可用性。"
+        }
+      },
+      "status": "created",
+      "issue_key": "KMMOM3-4416",
+      "issue_id": "157661",
+      "transition_applied": "",
+      "error": ""
+    },
+    {
+      "row_index": 2,
+      "summary": "【页面布局管理-服务端布局】 已入组隐藏字段改为可见后自动移出分组",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【页面布局管理-服务端布局】 已入组隐藏字段改为可见后自动移出分组",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：在系统管理的页面布局管理中，打开服务端布局的网格默认布局设计后，先将一个隐藏字段加入分组，再把该字段从隐藏修改为显示后，字段会自动从原分组中移出。\n操作步骤：\n1. 进入系统管理的页面布局管理页面，打开网格默认布局设计弹窗。\n2. 在列配置中选择一个当前为隐藏状态的字段，并将其加入某个分组。\n3. 在分组内将该字段的显示状态从隐藏修改为显示。\n4. 观察该字段在分组中的位置变化。\n实际结果：字段修改为显示后，会自动从原分组中移出，无法继续保留在该分组内。\n期望结果：字段显示状态修改为显示后，应继续保留在原分组中，只有在用户主动移出分组时才应离开该分组。",
+          "priority": {
+            "name": "P1-重要不紧急(100)"
+          },
+          "duedate": "2026-05-28",
+          "customfield_10257": {
+            "name": "luzh"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "luzh"
+          },
+          "customfield_10605": {
+            "value": "四级"
+          },
+          "components": [
+            {
+              "name": "01-mom-platform"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 281,
+          "customfield_11104": "影响系统管理员或实施人员维护服务端布局分组规则，可能导致分组配置失效或需要重复维护，影响页面布局配置效率和准确性。"
+        }
+      },
+      "status": "created",
+      "issue_key": "KMMOM3-4417",
+      "issue_id": "157662",
+      "transition_applied": "",
+      "error": ""
+    }
+  ]
+}

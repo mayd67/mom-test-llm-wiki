@@ -22,8 +22,8 @@ description: Decide where testing deliverables should be stored under `outputs/`
 
 3. 映射到具体目录。
 - 按参考规则中的目录映射表定位到 `outputs/01_需求评审/` 到 `outputs/99_归档/`。
-- 处理测试点时优先使用 `01_待评审/`、`02_已评审/`、`03_已沉淀/`。
-- 处理测试用例时优先区分评审稿、定稿和 MeterSphere 导入版。
+- 当前仓库中，测试点统一放到 `outputs/02_测试点/测试点/`，仅保留最终版本。
+- 当前仓库中，测试用例统一拆为 `outputs/03_测试用例/测试用例/`、`outputs/03_测试用例/评审/`、`outputs/03_测试用例/MeterSphere导入/`。
 - 处理测试数据时按“一个业务场景一个子目录”组织。
 
 4. 给出落位与命名建议。

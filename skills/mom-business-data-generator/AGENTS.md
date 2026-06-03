@@ -24,7 +24,9 @@
 
 ## 默认规则
 
-- 模板默认使用 `templates/`
+- 用户提供了最新导入模板时，必须优先使用用户提供的模板目录
+- 不要直接覆盖 `templates/`；优先把最新模板复制到当前业务目录下的独立模板目录，并统一重命名为标准文件名
+- 除非已明确确认 `templates/` 就是最新模板，否则生成和校验命令都显式传 `--template-dir <最新模板目录>`
 - 输出默认写到工作区根目录 `outputs/06_测试数据/`
 - 输出目录优先中文，推荐 `outputs/06_测试数据/<物料中文名>/<中文方案>`
 - 摘要文件优先 `种子概览.json`
@@ -38,4 +40,10 @@
 - `scripts/generate_seed_workbooks.py`
 - `scripts/organize_output_by_material_name.py`
 - `scripts/build_portable_agent_package.py`
+
+## 模板使用要求
+
+- 导出的 Excel 必须按本次任务确认的最新模板输出
+- 如果用户提供了新模板，导出结果必须与用户模板的 Sheet 和列头保持一致
+- 如果模板口径与 skill 自带 `templates/` 不一致，以本次 `--template-dir` 指向模板的实际约束为准
 

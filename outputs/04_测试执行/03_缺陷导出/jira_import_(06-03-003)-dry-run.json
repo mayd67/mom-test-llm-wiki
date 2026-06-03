@@ -1,0 +1,57 @@
+{
+  "mode": "dry-run",
+  "project_key": "KMMOM3",
+  "success_count": 1,
+  "failure_count": 0,
+  "results": [
+    {
+      "row_index": 1,
+      "summary": "【工序库-批量编辑】 无法清除组织信息",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【工序库-批量编辑】 无法清除组织信息",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：在基础数据-工序库页面对多条工序执行批量编辑时，组织字段无法清除，界面提示“无法清除组织信息”。\n操作步骤：\n1. 进入基础数据-工序库页面。\n2. 勾选多条已有组织信息的工序记录。\n3. 点击批量编辑，打开批量编辑窗口。\n4. 在批量编辑窗口中尝试清空组织字段。\n实际结果：组织字段无法被清除，界面提示“无法清除组织信息”。\n期望结果：批量编辑窗口应支持按业务规则清除组织信息，保存时不应因清空组织字段被拦截。",
+          "priority": {
+            "name": "P2-紧急不重要(100)"
+          },
+          "duedate": "2026-06-06",
+          "customfield_10257": {
+            "name": "luzh"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "luzh"
+          },
+          "customfield_10605": {
+            "value": "四级"
+          },
+          "components": [
+            {
+              "name": "02-mom-mes"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响主数据维护人员在工序库中批量调整或清理组织信息，需要逐条修改或无法完成预期维护操作，降低维护效率。"
+        }
+      },
+      "status": "dry-run",
+      "issue_key": "",
+      "issue_id": "",
+      "transition_applied": "",
+      "error": ""
+    }
+  ]
+}

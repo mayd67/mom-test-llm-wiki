@@ -1,0 +1,204 @@
+{
+  "mode": "import",
+  "project_key": "KMMOM3",
+  "success_count": 4,
+  "failure_count": 0,
+  "results": [
+    {
+      "row_index": 1,
+      "summary": "【生产订单】 切换未发布订单视图后默认生命周期条件未自动触发查询",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【生产订单】 切换未发布订单视图后默认生命周期条件未自动触发查询",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：在生产订单页面已配置“未发布订单”视图，且生命周期状态默认查询条件为“已创建”的情况下，用户切换进入该视图时，查询条件栏已带出“已创建”，但页面未自动执行查询，列表仍展示不符合该默认条件的数据。\n操作步骤：\n1. 进入生产订单页面。\n2. 在页面配置中新增或选择“未发布订单”视图，并将生命周期状态默认查询条件配置为“已创建”。\n3. 保存配置并切换到“未发布订单”视图。\n4. 观察查询条件和列表数据。\n实际结果：生命周期状态查询条件显示为“已创建”，但页面未自动执行查询，列表中仍展示已发布等不符合默认条件的数据。\n期望结果：切换到带默认查询条件的视图后，应自动按默认条件执行查询，列表仅展示生命周期状态为“已创建”的生产订单。",
+          "priority": {
+            "name": "P2-紧急不重要(100)"
+          },
+          "duedate": "2026-06-04",
+          "customfield_10257": {
+            "name": "mengx"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "mengx"
+          },
+          "customfield_10605": {
+            "value": "四级"
+          },
+          "components": [
+            {
+              "name": "02-mom-mes"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响生产订单视图默认筛选能力，导致用户进入预设视图后看到的数据与视图定义不一致，增加人工再次查询和误判订单状态的风险。"
+        }
+      },
+      "status": "created",
+      "issue_key": "KMMOM3-4436",
+      "issue_id": "158108",
+      "transition_applied": "",
+      "error": ""
+    },
+    {
+      "row_index": 2,
+      "summary": "【工艺路线-工序】 批量编辑执行标记保存后不生效",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【工艺路线-工序】 批量编辑执行标记保存后不生效",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：在工艺路线详情的工序页签中，对多条工序执行批量编辑并保存后，页面提示保存成功且显示已更新记录数，但被编辑字段实际未生效。\n操作步骤：\n1. 进入工艺路线详情页面并打开“工序”页签。\n2. 勾选多条工序记录。\n3. 点击“批量编辑”，修改执行标记等字段并保存。\n4. 返回列表查看对应工序记录的字段值。\n实际结果：页面提示“保存成功”，并显示已更新记录数，但工序列表中的执行标记等字段值未发生变化，批量编辑结果未生效。\n期望结果：批量编辑保存成功后，所选工序记录应按修改内容更新，列表展示结果应与保存内容一致。",
+          "priority": {
+            "name": "P1-重要不紧急(100)"
+          },
+          "duedate": "2026-06-02",
+          "customfield_10257": {
+            "name": "weif"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "weif"
+          },
+          "customfield_10605": {
+            "value": "三级"
+          },
+          "components": [
+            {
+              "name": "02-mom-mes"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响工艺路线工序数据的批量维护，降低基础数据维护效率，并可能导致用户误以为保存成功而继续使用未更新的数据。"
+        }
+      },
+      "status": "created",
+      "issue_key": "KMMOM3-4437",
+      "issue_id": "158109",
+      "transition_applied": "",
+      "error": ""
+    },
+    {
+      "row_index": 3,
+      "summary": "【组织树/工作中心树】 建议增加对象编码展示",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【组织树/工作中心树】 建议增加对象编码展示",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：当前组织树、组织变动弹窗中的组织树以及工作中心树等树形区域主要展示对象名称，未同步展示对象编码。业务上用户通常更关注组织、工作中心等对象的编码信息，现有展示方式不便于快速识别目标对象。\n操作步骤：\n1. 进入用户管理页面查看左侧组织树，或打开组织变动弹窗查看组织树。\n2. 进入工作中心配置页面查看左侧工作中心树。\n3. 观察树节点的展示内容。\n实际结果：树节点仅展示对象名称，未展示对象编码信息。\n期望结果：树节点应支持同时展示对象编码和对象名称，便于用户快速识别和选择目标对象。",
+          "priority": {
+            "name": "P3-不重要不紧急(80)"
+          },
+          "duedate": "2026-06-06",
+          "customfield_10257": {
+            "name": "mengx"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "mengx"
+          },
+          "customfield_10605": {
+            "value": "建议"
+          },
+          "components": [
+            {
+              "name": "01-mom-platform"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响组织、工作中心等主数据对象的识别效率，在对象名称相近或树节点较多时更容易增加选择和核对成本。"
+        }
+      },
+      "status": "created",
+      "issue_key": "KMMOM3-4438",
+      "issue_id": "158110",
+      "transition_applied": "",
+      "error": ""
+    },
+    {
+      "row_index": 4,
+      "summary": "【工作中心配置-工作中心树】 建议增加查询配置",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【工作中心配置-工作中心树】 建议增加查询配置",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：在工作中心配置页面中，左侧工作中心树当前未提供查询配置或搜索入口。当工作中心节点较多时，用户只能通过手工展开和滚动方式查找目标节点，定位效率较低。\n操作步骤：\n1. 进入工作中心配置页面。\n2. 查看左侧工作中心树区域。\n3. 在节点较多的情况下尝试快速定位目标工作中心。\n实际结果：左侧工作中心树未提供查询配置或搜索框，用户只能手工逐级展开树节点查找目标对象。\n期望结果：工作中心树应支持查询配置或搜索框，便于用户快速检索并定位目标工作中心节点。",
+          "priority": {
+            "name": "P3-不重要不紧急(80)"
+          },
+          "duedate": "2026-06-06",
+          "customfield_10257": {
+            "name": "mengx"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "mengx"
+          },
+          "customfield_10605": {
+            "value": "建议"
+          },
+          "components": [
+            {
+              "name": "01-mom-platform"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响工作中心主数据维护场景下的节点查找效率，数据量较大时会增加人工查找时间和操作成本。"
+        }
+      },
+      "status": "created",
+      "issue_key": "KMMOM3-4439",
+      "issue_id": "158111",
+      "transition_applied": "",
+      "error": ""
+    }
+  ]
+}

@@ -37,7 +37,7 @@ description: Review existing functional test cases against requirement documents
 4. 需要修订时再扩展。
 - 默认先出评审意见，不直接重写整套用例，除非用户明确要求修订。
 - 若发现是结构性漏测，先补测试点，再补测试用例。
-- 若用户要求落文件且未指定目录，默认把评审稿放到 `outputs/03_测试用例/01_待评审/`。
+- 若用户要求落文件且未指定目录，默认把评审稿放到 `outputs/03_测试用例/评审/`。
 
 ## 评审规则
 

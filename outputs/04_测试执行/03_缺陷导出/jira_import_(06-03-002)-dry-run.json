@@ -1,0 +1,204 @@
+{
+  "mode": "dry-run",
+  "project_key": "KMMOM3",
+  "success_count": 4,
+  "failure_count": 0,
+  "results": [
+    {
+      "row_index": 1,
+      "summary": "【计划管理-制造订单】 网格引用属性值无法选中复制",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【计划管理-制造订单】 网格引用属性值无法选中复制",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：计划管理-制造订单列表页面的网格中，生产订单、物料等引用属性值当前无法选中文本后执行复制。\n操作步骤：\n1. 进入计划管理-制造订单列表页面。\n2. 在列表网格中查看生产订单、物料等引用属性列。\n3. 尝试选中单元格中的引用属性文本并执行复制。\n实际结果：引用属性文本无法被选中复制。\n期望结果：网格中的引用属性文本应支持选中后复制，不影响正常查看或跳转。",
+          "priority": {
+            "name": "P3-不重要不紧急(80)"
+          },
+          "duedate": "2026-06-08",
+          "customfield_10257": {
+            "name": "luzh"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "luzh"
+          },
+          "customfield_10605": {
+            "value": "六级"
+          },
+          "components": [
+            {
+              "name": "02-mom-mes"
+            }
+          ],
+          "customfield_10901": {
+            "value": "低"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响计划员、测试人员在生产订单列表中快速复制生产订单号、物料编码等引用属性内容，降低排查和录入效率。"
+        }
+      },
+      "status": "dry-run",
+      "issue_key": "",
+      "issue_id": "",
+      "transition_applied": "",
+      "error": ""
+    },
+    {
+      "row_index": 2,
+      "summary": "【用户管理】 选择未分配组织节点新增用户时业务组织默认显示-1",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【用户管理】 选择未分配组织节点新增用户时业务组织默认显示-1",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：用户管理界面选择未分配组织节点后新增用户，新增窗口中的业务组织字段默认显示为-1。\n操作步骤：\n1. 进入基础数据-用户管理页面。\n2. 在左侧组织树中选择未分配组织节点。\n3. 点击新增，打开用户新增窗口。\n4. 查看业务组织字段默认值。\n实际结果：业务组织字段默认显示为-1。\n期望结果：业务组织字段应为空、按业务规则回填合法组织，或与当前节点关系保持一致，不应显示-1。",
+          "priority": {
+            "name": "P2-紧急不重要(100)"
+          },
+          "duedate": "2026-06-06",
+          "customfield_10257": {
+            "name": "mengx"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "mengx"
+          },
+          "customfield_10605": {
+            "value": "四级"
+          },
+          "components": [
+            {
+              "name": "01-mom-platform"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响系统管理员或主数据维护人员新增用户时对业务组织的判断，存在错误数据录入或重复修改风险。"
+        }
+      },
+      "status": "dry-run",
+      "issue_key": "",
+      "issue_id": "",
+      "transition_applied": "",
+      "error": ""
+    },
+    {
+      "row_index": 3,
+      "summary": "【功能权限定义】 待办任务批量通过无效权限码仍保留",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【功能权限定义】 待办任务批量通过无效权限码仍保留",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：待办任务界面的批量通过按钮当前已不再受权限控制，但功能权限定义页面中仍保留对应权限码platform.todo.batch_pass；若该功能分组下已无可用权限码，对应功能分组也应一并删除。\n操作步骤：\n1. 进入系统管理-功能权限定义页面。\n2. 展开待办任务相关功能分组。\n3. 查看待办任务批量通过权限码配置。\n4. 对照待办任务页面当前按钮权限控制逻辑进行检查。\n实际结果：功能权限定义中仍保留待办任务批量通过权限码及相关分组配置。\n期望结果：删除已失效的待办任务批量通过权限码；若对应功能分组下无其他有效权限码，则同步删除该功能分组。",
+          "priority": {
+            "name": "P3-不重要不紧急(80)"
+          },
+          "duedate": "2026-06-08",
+          "customfield_10257": {
+            "name": "liuld"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "liuld"
+          },
+          "customfield_10605": {
+            "value": "建议"
+          },
+          "components": [
+            {
+              "name": "01-mom-platform"
+            }
+          ],
+          "customfield_10901": {
+            "value": "低"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响权限管理员维护系统权限基线时的准确性，导致权限配置与系统实际行为不一致，增加维护和理解成本。"
+        }
+      },
+      "status": "dry-run",
+      "issue_key": "",
+      "issue_id": "",
+      "transition_applied": "",
+      "error": ""
+    },
+    {
+      "row_index": 4,
+      "summary": "【计划管理-生产订单】 批量发布不应限制订单必须属于同一工厂组织",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【计划管理-生产订单】 批量发布不应限制订单必须属于同一工厂组织",
+          "description": "环境：测试环境：http://192.168.30.69:40000\n问题描述：生产订单页面批量发布时，若勾选的订单不属于同一工厂组织，系统会进行“生产订单必须属于同一个工厂组织”的校验并阻止发布。\n操作步骤：\n1. 进入计划管理-生产订单页面。\n2. 勾选多个属于不同工厂组织的生产订单。\n3. 点击批量发布。\n实际结果：系统提示“生产订单必须属于同一个工厂组织”，批量发布失败。\n期望结果：去掉订单必须属于同一工厂组织的校验，允许不同工厂组织的选中订单执行批量发布。",
+          "priority": {
+            "name": "P1-重要不紧急(100)"
+          },
+          "duedate": "2026-06-04",
+          "customfield_10257": {
+            "name": "xueqk"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "xueqk"
+          },
+          "customfield_10605": {
+            "value": "三级"
+          },
+          "components": [
+            {
+              "name": "02-mom-mes"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响计划员对跨工厂组织订单执行批量发布，当前需要拆分选择或逐单处理，降低业务处理效率。"
+        }
+      },
+      "status": "dry-run",
+      "issue_key": "",
+      "issue_id": "",
+      "transition_applied": "",
+      "error": ""
+    }
+  ]
+}

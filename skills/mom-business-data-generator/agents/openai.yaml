@@ -1,4 +1,4 @@
 interface:
   display_name: "MOM业务数据生成"
   short_description: "基于模板和内置种子生成 MOM 主数据、资源、工艺和生产订单导入包。"
-  default_prompt: "请使用 $mom-business-data-generator 根据场景选择合适蓝图，优先复用内置标准场景或现有 seed JSON，并按 templates/ 下的最新导入模板生成或校验 MOM 业务数据包。"
+  default_prompt: "请使用 $mom-business-data-generator 根据场景选择合适蓝图，优先复用内置标准场景或现有 seed JSON；如果用户提供了最新导入模板，必须优先使用用户模板目录并显式传 --template-dir，导出的 Excel 需要按本次确认的最新模板生成或校验。"

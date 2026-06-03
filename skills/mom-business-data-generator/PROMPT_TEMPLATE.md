@@ -13,7 +13,9 @@
 5. 如需要字段和引用关系细节，再阅读 references/template_relationships.md 和 references/template_constraint_dictionary.md
 
 执行时请遵守以下规则：
-- 模板默认使用 templates/ 目录
+- 用户提供了最新导入模板时，必须优先使用用户提供的模板目录
+- 不要直接覆盖 templates/；优先复制到当前业务目录下的独立模板目录
+- 除非已明确确认 templates/ 就是最新模板，否则生成和校验命令都显式传 --template-dir <最新模板目录>
 - 输出默认写到工作区根目录 outputs/06_测试数据/
 - 输出名称优先中文
 - 摘要文件优先使用 种子概览.json
@@ -21,11 +23,12 @@
 - 未明确要求时，不生成 厂内转工 / 厂际转工
 - 编码优先短编码，例如 Eq001、Wc001、Wh001、Loc001、Mat001、Rt001
 - 优先复用现有脚本，不要手工拼 Excel
+- 导出的 Excel 必须按本次任务确认的最新模板输出
 
 优先使用以下命令：
 - python scripts/build_common_seed_packages.py --list
-- python scripts/build_common_seed_packages.py --scenario bearing_machining_standard
-- python scripts/generate_seed_workbooks.py --seed assets/bearing_machining_seed.json --validate-only
+- python scripts/build_common_seed_packages.py --scenario bearing_machining_standard --template-dir .\最新模板
+- python scripts/generate_seed_workbooks.py --seed assets/bearing_machining_seed.json --template-dir .\最新模板 --validate-only
 - python scripts/organize_output_by_material_name.py --clean
 
 如果我要你生成新业务数据，请先判断属于单工厂、多工厂还是项目部协同场景，再选择最接近的现有脚本或按相同结构扩展。

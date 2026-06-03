@@ -1,0 +1,317 @@
+{
+  "project_key": "KMMOM3",
+  "project_code": "KMMOM",
+  "board_id": "149",
+  "today": "2026-05-27",
+  "suggestion_reason": "当前日期 2026-05-27 晚于已知 Sprint 周期，已选择最近结束的 Sprint V3.5-a2(260502)(281)。",
+  "suggested_sprint": {
+    "id": "281",
+    "name": "V3.5-a2(260502)",
+    "state": "future",
+    "start_date": "2026-04-20",
+    "end_date": "2026-05-02"
+  },
+  "sprints": [
+    {
+      "id": "286",
+      "name": "V3.5-a2(260606)",
+      "state": "future",
+      "start_date": "",
+      "end_date": ""
+    },
+    {
+      "id": "168",
+      "name": "V3.0-平台-a1(241207)",
+      "state": "closed",
+      "start_date": "2024-11-25",
+      "end_date": "2024-12-09"
+    },
+    {
+      "id": "172",
+      "name": "V3.0-业务-a1(241207)",
+      "state": "closed",
+      "start_date": "2024-11-25",
+      "end_date": "2024-12-07"
+    },
+    {
+      "id": "173",
+      "name": "V3.0-业务-a2(241221)",
+      "state": "closed",
+      "start_date": "2024-12-09",
+      "end_date": "2024-12-21"
+    },
+    {
+      "id": "175",
+      "name": "V3.0-业务-a3(250104)",
+      "state": "closed",
+      "start_date": "2024-12-23",
+      "end_date": "2025-01-04"
+    },
+    {
+      "id": "176",
+      "name": "V3.1-业务-a1(250215)",
+      "state": "closed",
+      "start_date": "2025-01-20",
+      "end_date": "2025-02-15"
+    },
+    {
+      "id": "178",
+      "name": "V3.1-业务-a2(250301)",
+      "state": "closed",
+      "start_date": "2025-02-17",
+      "end_date": "2025-03-01"
+    },
+    {
+      "id": "187",
+      "name": "V3.1-平台-a5(250412)",
+      "state": "closed",
+      "start_date": "2025-03-01",
+      "end_date": "2025-03-29"
+    },
+    {
+      "id": "192",
+      "name": "V3.1-平台-a4(250329)",
+      "state": "closed",
+      "start_date": "2025-03-01",
+      "end_date": "2025-03-29"
+    },
+    {
+      "id": "193",
+      "name": "V3.1-平台-a3(250315)",
+      "state": "closed",
+      "start_date": "2025-03-01",
+      "end_date": "2025-03-15"
+    },
+    {
+      "id": "179",
+      "name": "V3.1-业务-a3(250315)",
+      "state": "closed",
+      "start_date": "2025-03-03",
+      "end_date": "2025-03-15"
+    },
+    {
+      "id": "186",
+      "name": "V3.1-业务-a4(250329)",
+      "state": "closed",
+      "start_date": "2025-03-17",
+      "end_date": "2025-03-29"
+    },
+    {
+      "id": "185",
+      "name": "V3.1-业务-a5(250412)",
+      "state": "closed",
+      "start_date": "2025-03-31",
+      "end_date": "2025-04-12"
+    },
+    {
+      "id": "198",
+      "name": "V3.2-平台-a1(250426)",
+      "state": "closed",
+      "start_date": "2025-04-01",
+      "end_date": "2025-04-30"
+    },
+    {
+      "id": "199",
+      "name": "V3.2-业务-a1(250426)",
+      "state": "closed",
+      "start_date": "2025-04-01",
+      "end_date": "2025-04-30"
+    },
+    {
+      "id": "200",
+      "name": "V3.2-平台-a2(250517)",
+      "state": "closed",
+      "start_date": "2025-04-21",
+      "end_date": "2025-05-05"
+    },
+    {
+      "id": "190",
+      "name": "V3.2-业务-a2(250517)",
+      "state": "closed",
+      "start_date": "2025-04-28",
+      "end_date": "2025-05-17"
+    },
+    {
+      "id": "191",
+      "name": "V3.2-业务-a3(250530)",
+      "state": "closed",
+      "start_date": "2025-05-19",
+      "end_date": "2025-05-30"
+    },
+    {
+      "id": "201",
+      "name": "V3.2-平台-a3(250530)",
+      "state": "closed",
+      "start_date": "2025-05-30",
+      "end_date": "2025-06-13"
+    },
+    {
+      "id": "214",
+      "name": "V3.2-业务-a4(250614)",
+      "state": "closed",
+      "start_date": "2025-06-01",
+      "end_date": "2025-06-14"
+    },
+    {
+      "id": "210",
+      "name": "V3.2-业务-a5(250628)",
+      "state": "closed",
+      "start_date": "2025-06-15",
+      "end_date": "2025-06-28"
+    },
+    {
+      "id": "188",
+      "name": "V3.2-a6(250712)",
+      "state": "closed",
+      "start_date": "2025-06-29",
+      "end_date": "2025-07-12"
+    },
+    {
+      "id": "224",
+      "name": "V3.3-a1(250726)",
+      "state": "closed",
+      "start_date": "2025-07-14",
+      "end_date": "2025-07-26"
+    },
+    {
+      "id": "225",
+      "name": "V3.3-a2(250809)",
+      "state": "closed",
+      "start_date": "2025-07-28",
+      "end_date": "2025-08-06"
+    },
+    {
+      "id": "226",
+      "name": "V3.3-a3(250823)",
+      "state": "closed",
+      "start_date": "2025-08-11",
+      "end_date": "2025-08-23"
+    },
+    {
+      "id": "227",
+      "name": "V3.3-a4(250906)",
+      "state": "closed",
+      "start_date": "2025-08-25",
+      "end_date": "2025-09-06"
+    },
+    {
+      "id": "228",
+      "name": "V3.3-a5(250920)",
+      "state": "closed",
+      "start_date": "2025-09-08",
+      "end_date": "2025-09-20"
+    },
+    {
+      "id": "229",
+      "name": "V3.3-a6(251011)",
+      "state": "closed",
+      "start_date": "2025-09-22",
+      "end_date": "2025-10-15"
+    },
+    {
+      "id": "247",
+      "name": "V3.3-a7(251025)",
+      "state": "closed",
+      "start_date": "2025-10-13",
+      "end_date": "2025-10-25"
+    },
+    {
+      "id": "248",
+      "name": "V3.4-a1(251108)",
+      "state": "closed",
+      "start_date": "2025-10-27",
+      "end_date": "2025-11-08"
+    },
+    {
+      "id": "250",
+      "name": "V3.4-a2(251122)",
+      "state": "closed",
+      "start_date": "2025-11-10",
+      "end_date": "2025-11-22"
+    },
+    {
+      "id": "256",
+      "name": "V3.3-a10(251206)",
+      "state": "closed",
+      "start_date": "2025-11-24",
+      "end_date": "2025-12-06"
+    },
+    {
+      "id": "257",
+      "name": "V3.3-a11(251220)",
+      "state": "closed",
+      "start_date": "2025-12-08",
+      "end_date": "2025-12-20"
+    },
+    {
+      "id": "258",
+      "name": "V3.3-a12(260103)",
+      "state": "closed",
+      "start_date": "2025-12-22",
+      "end_date": "2026-01-03"
+    },
+    {
+      "id": "259",
+      "name": "V3.4-a1(260117)",
+      "state": "closed",
+      "start_date": "2026-01-05",
+      "end_date": "2026-01-17"
+    },
+    {
+      "id": "263",
+      "name": "V3.4-a1(260131)",
+      "state": "closed",
+      "start_date": "2026-01-18",
+      "end_date": "2026-01-31"
+    },
+    {
+      "id": "264",
+      "name": "V3.4-a2(260214)",
+      "state": "active",
+      "start_date": "2026-02-01",
+      "end_date": "2026-02-14"
+    },
+    {
+      "id": "270",
+      "name": "V3.4-a3(260307)",
+      "state": "active",
+      "start_date": "2026-02-24",
+      "end_date": "2026-03-07"
+    },
+    {
+      "id": "271",
+      "name": "V3.4-a4(260321)",
+      "state": "active",
+      "start_date": "2026-03-09",
+      "end_date": "2026-03-21"
+    },
+    {
+      "id": "274",
+      "name": "V3.4-a5(260404)",
+      "state": "active",
+      "start_date": "2026-03-23",
+      "end_date": "2026-04-04"
+    },
+    {
+      "id": "276",
+      "name": "V3.5-a1(260418)",
+      "state": "active",
+      "start_date": "2026-04-07",
+      "end_date": "2026-04-18"
+    },
+    {
+      "id": "277",
+      "name": "V3.5-a2(260502)",
+      "state": "future",
+      "start_date": "2026-04-20",
+      "end_date": "2026-05-02"
+    },
+    {
+      "id": "281",
+      "name": "V3.5-a2(260502)",
+      "state": "future",
+      "start_date": "2026-04-20",
+      "end_date": "2026-05-02"
+    }
+  ]
+}
