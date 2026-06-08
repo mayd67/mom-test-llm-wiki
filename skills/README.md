@@ -20,6 +20,7 @@
 | `references/` | 按需读取的规则、约束、映射和流程文档 |
 | `scripts/` | 需要稳定复用的脚本 |
 | `assets/` | 模板、示例种子、CSV 模板等资源 |
+| `templates/` | 仅在 skill 需要复用独立模板文件时提供，例如 Excel 导入模板 |
 | `tests/` | 针对复杂脚本或生成逻辑的校验 |
 
 ## 当前技能清单
@@ -27,11 +28,12 @@
 | Skill | 主要职责 | 关键资源 | 默认产物或说明 |
 | --- | --- | --- | --- |
 | `requirement-to-testpoints` | 从需求、原型、流程图拆测试点、风险点和待确认项 | `references/testpoint-dimensions.md`、`assets/testpoint-output-template.md` | `outputs/02_测试点/测试点/` |
-| `requirement-to-testcases` | 从需求材料或测试点生成模板化测试用例 | `references/testcase-rules.md`、`assets/testcase-template.md` | Markdown 工作稿进 `outputs/03_测试用例/测试用例/`，导入版 Excel 进 `outputs/03_测试用例/MeterSphere导入/` |
+| `requirement-to-testcases` | 从需求材料或测试点生成模板化测试用例 | `references/testcase-rules.md`、`assets/testcase-template.md` | Markdown 工作稿默认保留 `用例编码` 列并进 `outputs/03_测试用例/测试用例/`，导入版 Excel 不保留该列并进 `outputs/03_测试用例/MeterSphere导入/` |
 | `review-functional-testcases` | 按需求文档、RPD、原型、流程和测试点基线评审现有功能测试用例 | `references/review-dimensions.md`、`references/mom-testcase-review-checklist.md`、`assets/review-output-template.md` | 默认输出测试用例评审稿或问题清单，建议落到 `outputs/03_测试用例/评审/` |
 | `user-manual-writer` | 生成或改写 MOM 用户操作手册、模块说明和培训稿 | `references/manual-writing-rules.md`、`assets/manual-outline-template.md` | 交付稿默认进 `outputs/05_用户操作手册/`；知识沉淀稿可进入 `wiki/` |
 | `mom-business-data-generator` | 生成 MOM 主数据、资源、工艺和生产订单导入包 | `templates/`、`references/template_relationships.md`、`scripts/build_common_seed_packages.py` | `outputs/06_测试数据/`；目录内保留跨 Agent 兼容资料 |
 | `defect-report-generator` | 把零散缺陷素材整理为 Jira 可导入 CSV | `references/jira-defect-rules.md`、`assets/jira-import-template.csv`、`scripts/generate_jira_csv.py` | `outputs/04_测试执行/03_缺陷导出/` |
+| `jira-defect-importer` | 将规范化缺陷 CSV 或已整理缺陷数据直接导入 Jira | `references/jira-rest-mapping.md`、`assets/jira-import-config.example.json`、`scripts/import_jira_defects.py` | 默认先做 dry-run；仅在用户明确要求时真实写入 Jira |
 | `test-output-placement` | 判断测试产物该进入哪个 `outputs/` 目录并规范命名 | `references/output-directory-rules.md` | 自身不产出业务文件 |
 | `raw-to-wiki-ingest` | 按仓库规则把 `raw/` 新文件安全入库到 `wiki/` | `references/routing-rules.md` | 主要写入 `wiki/` 镜像页或调用 builder，不产出 `outputs/` 业务文件 |
 

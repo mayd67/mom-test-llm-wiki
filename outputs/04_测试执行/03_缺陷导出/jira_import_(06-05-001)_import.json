@@ -1,0 +1,20 @@
+{
+  "mode": "import",
+  "project_key": "KMMOM3",
+  "success_count": 0,
+  "failure_count": 1,
+  "results": [
+    {
+      "row_index": 1,
+      "summary": "【质量报告模板界面】新增、编辑、复制窗口中的确定按钮缺少防抖",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {},
+      "status": "failed",
+      "issue_key": "",
+      "issue_id": "",
+      "transition_applied": "",
+      "error": "POST http://192.168.30.111:8080/rest/api/2/issue failed with HTTP 400: {\"errorMessages\":[\"问题只可以被分配为活跃或未来Sprint。\"],\"errors\":{}}"
+    }
+  ]
+}

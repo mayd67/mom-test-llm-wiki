@@ -1,1 +1,15 @@
 skills/jira-defect-importer/assets/jira-import-config.local.json
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Office lock and temp files
+~$*
+*.tmp
+
+# Local Jira staging artifacts
+/_tmp_jira_submit/
+/_tmp_jira_import_test/
+/_tmp_jira_sprint_catalog.json

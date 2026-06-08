@@ -1,0 +1,57 @@
+{
+  "mode": "import",
+  "project_key": "KMMOM3",
+  "success_count": 1,
+  "failure_count": 0,
+  "results": [
+    {
+      "row_index": 1,
+      "summary": "【质量报告模板界面】新增、编辑、复制窗口中的确定按钮缺少防抖",
+      "requested_status": "缺陷编制中",
+      "warnings": [],
+      "payload": {
+        "fields": {
+          "project": {
+            "key": "KMMOM3"
+          },
+          "issuetype": {
+            "name": "缺陷"
+          },
+          "summary": "【质量报告模板界面】新增、编辑、复制窗口中的确定按钮缺少防抖",
+          "description": "环境：测试环境：http://192.168.30.69:40000；测试环境：http://192.168.30.69:40000\n问题描述：【质量报告模板界面】新增、编辑、复制窗口中的确定按钮缺少防抖\n在质量报告模板界面的新增、编辑、复制窗口中，点击确定按钮后，按钮未做防抖控制。\n操作步骤：\n1. 进入质量报告模板界面。\n2. 分别打开新增、编辑、复制窗口。\n3. 在窗口中填写或保持可提交状态后，连续快速点击确定按钮。\n实际结果：确定按钮可被连续重复点击，存在重复提交风险。\n期望结果：确定按钮在首次点击提交后应进行防抖或禁用处理，避免连续点击导致重复提交。",
+          "priority": {
+            "name": "P1-重要不紧急(100)"
+          },
+          "duedate": "2026-06-06",
+          "customfield_10257": {
+            "name": "liujw"
+          },
+          "customfield_11002": {
+            "name": "mayd"
+          },
+          "customfield_11238": {
+            "name": "liujw"
+          },
+          "customfield_10605": {
+            "value": "三级"
+          },
+          "components": [
+            {
+              "name": "01-mom-platform"
+            }
+          ],
+          "customfield_10901": {
+            "value": "中"
+          },
+          "customfield_10101": 286,
+          "customfield_11104": "影响质量报告模板维护场景下的新增、编辑、复制操作，可能导致重复提交、重复保存或重复请求，影响模板数据维护的稳定性。"
+        }
+      },
+      "status": "created",
+      "issue_key": "KMMOM3-4489",
+      "issue_id": "158749",
+      "transition_applied": "",
+      "error": ""
+    }
+  ]
+}
