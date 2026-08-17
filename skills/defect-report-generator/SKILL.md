@@ -38,7 +38,7 @@ description: Generate Jira-importable KMMOM defect CSV files from rough bug note
 4. `描述` 必须严格使用以下结构：
 
 ```text
-环境：测试环境：http://192.168.30.69:40000
+环境：测试环境：http://192.168.30.186:32053/ant-web/#/user/login
 问题描述：...
 操作步骤：
 1. ...

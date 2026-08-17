@@ -30,6 +30,7 @@ description: Generate structured test cases from requirement documents, wirefram
 - 单条用例包含多步时，按模板拆成多行：首行填写共享字段，后续行仅填写 `步骤描述`、`预期结果`，其余列留空以便映射到 Excel 合并单元格效果。
 - 用户用中文提问时，默认输出中文。
 - 如果用户要的是“先出核心用例”，优先输出 P0/P1 的主流程和高风险异常用例。
+- MeterSphere 导入版的编辑模式固定填写 TEXT，不得沿用 Markdown 工作稿中的其他值。
 - 若输出为 Markdown 工作稿且用户未指定目录，默认放到 `outputs/03_测试用例/测试用例/`。
 - 若输出为 MeterSphere 导入版 Excel 且用户未指定目录，默认放到 `outputs/03_测试用例/MeterSphere导入/`。
 

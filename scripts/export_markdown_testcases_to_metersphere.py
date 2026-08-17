@@ -33,22 +33,41 @@ def is_separator_row(cells: list[str]) -> bool:
     return all(cell.replace("-", "").replace(":", "").strip() == "" for cell in cells)
 
 
+def append_cell_value(original: str, continuation: str) -> str:
+    if not original:
+        return continuation
+    if not continuation:
+        return original
+    return f"{original}<br>{continuation}"
+
+
 def extract_cases(markdown_path: Path) -> list[dict[str, str]]:
     cases: list[dict[str, str]] = []
     lines = markdown_path.read_text(encoding="utf-8").splitlines()
-    expected_columns = 12
 
     for line in lines:
         if not line.startswith("|"):
             continue
         cells = parse_table_row(line)
-        if len(cells) != expected_columns:
+        if len(cells) not in (11, 12):
             continue
-        if cells[0] == "用例编码" or is_separator_row(cells):
+        if cells[0] in ("用例编码", "用例名称") or is_separator_row(cells):
             continue
 
-        code, name, module, tag, precondition, steps, expected, mode, note, status, owner, level = cells
-        case_name = f"{code} {name}".strip()
+        if len(cells) == 12:
+            code, name, module, tag, precondition, steps, expected, _mode, note, status, owner, level = cells
+            case_name = f"{code} {name}".strip()
+        else:
+            case_name, module, tag, precondition, steps, expected, _mode, note, status, owner, level = cells
+
+        # Markdown working drafts use blank shared columns for a case's later steps.
+        if not case_name:
+            if cases and (steps or expected):
+                previous = cases[-1]
+                previous["步骤描述"] = append_cell_value(previous["步骤描述"], steps)
+                previous["预期结果"] = append_cell_value(previous["预期结果"], expected)
+            continue
+
         cases.append(
             {
                 "用例名称": case_name,
@@ -57,7 +76,8 @@ def extract_cases(markdown_path: Path) -> list[dict[str, str]]:
                 "前置条件": precondition,
                 "步骤描述": steps,
                 "预期结果": expected,
-                "编辑模式": mode or "TEXT",
+                # MeterSphere imports require TEXT mode, regardless of the Markdown work draft.
+                "编辑模式": "TEXT",
                 "备注": note,
                 "用例状态": status or "未开始",
                 "责任人": owner,
